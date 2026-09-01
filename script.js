@@ -21,10 +21,10 @@ const BUSINESS_NAME = "Sakshi Madgundi";
  * Use country code.
  * Do NOT use +, spaces or dashes.
  */
-const BUSINESS_WHATSAPP = "REPLACE_WITH_YOUR_WHATSAPP_NUMBER";
+const BUSINESS_WHATSAPP = "tel: +91 9960021658";
 
 
-const BUSINESS_EMAIL = "YOUR_EMAIL@example.com";
+const BUSINESS_EMAIL = "sakshimadgundi2020@gmail.com";
 
 
 const QR_IMAGE_PATH = "assets/images/kotak-qr.png";
