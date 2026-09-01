@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -23,41 +24,30 @@
         }
 
         body {
-            background: #000000;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
+            background: #000;
             overflow: hidden;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
         }
 
-        .splash-screen {
+        .splash {
             position: fixed;
             inset: 0;
 
             width: 100%;
             height: 100%;
 
-            background: #000000;
-
             display: flex;
             align-items: center;
             justify-content: center;
 
+            background: #000;
+
             z-index: 99999;
 
-            animation: splashFadeOut 0.6s ease forwards;
-
+            animation: fadeOut 0.6s ease forwards;
             animation-delay: 4.4s;
         }
 
-        .splash-logo {
+        .splash img {
             width: min(520px, 78vw);
             height: auto;
 
@@ -65,36 +55,34 @@
 
             object-fit: contain;
 
-            animation: logoAppear 0.8s ease-out;
+            animation: logoIn 0.8s ease-out;
         }
 
-        @keyframes logoAppear {
-            0% {
+        @keyframes logoIn {
+            from {
                 opacity: 0;
                 transform: scale(0.92);
             }
 
-            100% {
+            to {
                 opacity: 1;
                 transform: scale(1);
             }
         }
 
-        @keyframes splashFadeOut {
-            0% {
+        @keyframes fadeOut {
+            from {
                 opacity: 1;
-                visibility: visible;
             }
 
-            100% {
+            to {
                 opacity: 0;
                 visibility: hidden;
-                pointer-events: none;
             }
         }
 
         @media (max-width: 600px) {
-            .splash-logo {
+            .splash img {
                 width: 82vw;
             }
         }
@@ -103,23 +91,20 @@
 
 <body>
 
-    <div class="splash-screen" id="splashScreen">
+    <div class="splash">
 
         <img
             src="logo.png"
             alt="Web Services — Sakshi Madgundi"
-            class="splash-logo"
         >
 
     </div>
 
     <script>
         setTimeout(function () {
-            const splash = document.getElementById("splashScreen");
 
-            if (splash) {
-                splash.remove();
-            }
+            window.location.replace("index.html");
+
         }, 5000);
     </script>
 
