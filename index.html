@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Sakshi Madgundi | Web Services</title>
 
     <meta
         name="description"
-        content="Web design and development services by Sakshi Madgundi."
+        content="Web design, development, WordPress, WooCommerce and e-commerce services by Sakshi Madgundi."
     >
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
+
 <body>
+
 
 <!-- =========================================================
      HEADER
@@ -24,11 +33,15 @@
 
     <div class="header-inner">
 
-        <a href="index.html" class="brand">
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="Sakshi Madgundi Web Services"
+        >
 
             <img
                 src="logo.png"
-                alt="Web Services Since 2026"
+                alt="Sakshi Madgundi Web Services"
                 class="brand-logo"
             >
 
@@ -37,15 +50,24 @@
 
         <nav class="desktop-nav">
 
-            <a href="index.html" class="nav-link active">
+            <a
+                href="index.html"
+                class="nav-link active"
+            >
                 Services
             </a>
 
-            <a href="#about" class="nav-link">
+            <a
+                href="#about"
+                class="nav-link"
+            >
                 About
             </a>
 
-            <a href="#contact" class="nav-link">
+            <a
+                href="#contact"
+                class="nav-link"
+            >
                 Contact
             </a>
 
@@ -55,6 +77,7 @@
         <div class="header-actions">
 
             <button
+                type="button"
                 class="theme-button"
                 id="themeToggle"
                 aria-label="Toggle dark mode"
@@ -62,7 +85,9 @@
                 ☼
             </button>
 
+
             <button
+                type="button"
                 class="mobile-menu-button"
                 id="mobileMenuButton"
                 aria-label="Open menu"
@@ -77,7 +102,10 @@
 
     <!-- MOBILE MENU -->
 
-    <div class="mobile-menu" id="mobileMenu">
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
 
         <a href="index.html">
             Services
@@ -96,39 +124,49 @@
 </header>
 
 
+
 <!-- =========================================================
-     SHOP HEADER
+     MAIN
 ========================================================= -->
 
 <main>
 
+
+<!-- =========================================================
+     SHOP HEADER
+========================================================= -->
+
 <section class="shop-top">
 
-    <div>
+    <p class="shop-small-title">
+        SAKSHI MADGUNDI
+    </p>
 
-        <p class="shop-small-title">
-            SAKSHI MADGUNDI
-        </p>
 
-        <h1>
-            Web Services
-        </h1>
+    <h1>
+        Web Services
+    </h1>
 
-        <p class="shop-description">
-            Choose the web service you need and view exactly
-            what is included before booking.
-        </p>
 
-    </div>
+    <p class="shop-description">
+        Website design, development, customization and
+        e-commerce services. Choose a service below to
+        view its details and book it.
+    </p>
 
 </section>
 
 
+
 <!-- =========================================================
-     SERVICE SHOP
+     SERVICES
 ========================================================= -->
 
-<section class="services-section">
+<section
+    class="services-section"
+    id="services"
+>
+
 
     <div class="services-toolbar">
 
@@ -136,25 +174,32 @@
             Services
         </h2>
 
-        <span id="serviceCount">
-            5 services
+        <span>
+            9 services
         </span>
 
     </div>
 
 
+
     <div class="services-grid">
 
 
-        <!-- SERVICE 1 -->
+
+        <!-- =================================================
+             SERVICE 1
+        ================================================== -->
 
         <article class="service-card">
 
             <div class="service-image service-image-yellow">
-                <span class="service-icon">
-                    ✦
-                </span>
+
+                <div class="service-visual">
+                    WP
+                </div>
+
             </div>
+
 
             <div class="service-card-content">
 
@@ -162,27 +207,45 @@
                     WEBSITE FIX
                 </p>
 
+
                 <h3>
-                    WordPress Issue Fix
+                    Fix a WordPress Issue
                 </h3>
 
+
                 <p class="service-short">
-                    Fix a specific WordPress website issue,
-                    layout problem or functionality problem.
+                    Fix a specific issue on an existing
+                    WordPress website.
                 </p>
+
 
                 <div class="service-bottom">
 
                     <strong>
-                        ₹799 – ₹5,999
+                        ₹799
                     </strong>
 
-                    <a
-                        href="service.html?service=wordpress-fix"
-                        class="view-service"
-                    >
-                        View Service
-                    </a>
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=wordpress-fix"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="Fix a WordPress Issue"
+                            data-price="₹799"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -192,15 +255,20 @@
 
 
 
-        <!-- SERVICE 2 -->
+        <!-- =================================================
+             SERVICE 2
+        ================================================== -->
 
         <article class="service-card">
 
             <div class="service-image service-image-orange">
-                <span class="service-icon">
-                    🛒
-                </span>
+
+                <div class="service-visual">
+                    WC
+                </div>
+
             </div>
+
 
             <div class="service-card-content">
 
@@ -208,27 +276,45 @@
                     WOOCOMMERCE
                 </p>
 
+
                 <h3>
-                    WooCommerce Fix
+                    WooCommerce Cart Fix
                 </h3>
 
+
                 <p class="service-short">
-                    Fix cart, product, checkout and other
-                    WooCommerce website issues.
+                    Fix cart-related problems on an existing
+                    WooCommerce website.
                 </p>
+
 
                 <div class="service-bottom">
 
                     <strong>
-                        ₹799 – ₹5,999
+                        ₹999
                     </strong>
 
-                    <a
-                        href="service.html?service=woocommerce-fix"
-                        class="view-service"
-                    >
-                        View Service
-                    </a>
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=woocommerce-cart"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="WooCommerce Cart Fix"
+                            data-price="₹999"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -238,43 +324,66 @@
 
 
 
-        <!-- SERVICE 3 -->
+        <!-- =================================================
+             SERVICE 3
+        ================================================== -->
 
         <article class="service-card">
 
             <div class="service-image service-image-yellow">
-                <span class="service-icon">
+
+                <div class="service-visual">
                     ☰
-                </span>
+                </div>
+
             </div>
+
 
             <div class="service-card-content">
 
                 <p class="service-category">
-                    RESPONSIVE DESIGN
+                    RESPONSIVE FIX
                 </p>
+
 
                 <h3>
-                    Header / Menu Responsive Fix
+                    Header / Menu Making
                 </h3>
 
+
                 <p class="service-short">
-                    Make your website header, navigation and
-                    menus work properly on mobile and desktop.
+                    Create or fix a header or menu separately
+                    from your existing theme.
                 </p>
+
 
                 <div class="service-bottom">
 
                     <strong>
-                        ₹799 – ₹5,999
+                        ₹1,299
                     </strong>
 
-                    <a
-                        href="service.html?service=responsive-fix"
-                        class="view-service"
-                    >
-                        View Service
-                    </a>
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=header-menu"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="Header / Menu Making"
+                            data-price="₹1,299"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -284,43 +393,66 @@
 
 
 
-        <!-- SERVICE 4 -->
+        <!-- =================================================
+             SERVICE 4
+        ================================================== -->
 
         <article class="service-card">
 
             <div class="service-image service-image-orange">
-                <span class="service-icon">
+
+                <div class="service-visual">
                     ◇
-                </span>
+                </div>
+
             </div>
+
 
             <div class="service-card-content">
 
                 <p class="service-category">
-                    CUSTOM WEB PAGE
+                    WEB DESIGN
                 </p>
+
 
                 <h3>
-                    Landing / Product Page
+                    Connect a Design Into a Webpage
                 </h3>
 
+
                 <p class="service-short">
-                    A custom hand-coded webpage designed around
-                    your requirements.
+                    Turn an existing design into a working
+                    webpage.
                 </p>
+
 
                 <div class="service-bottom">
 
                     <strong>
-                        ₹1,500 – ₹3,000
+                        ₹1,499
                     </strong>
 
-                    <a
-                        href="service.html?service=custom-page"
-                        class="view-service"
-                    >
-                        View Service
-                    </a>
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=design-to-webpage"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="Connect a Design Into a Webpage"
+                            data-price="₹1,499"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -330,43 +462,343 @@
 
 
 
-        <!-- SERVICE 5 -->
+        <!-- =================================================
+             SERVICE 5
+        ================================================== -->
 
         <article class="service-card">
 
             <div class="service-image service-image-yellow">
-                <span class="service-icon">
-                    ✚
-                </span>
+
+                <div class="service-visual">
+                    LP
+                </div>
+
             </div>
+
 
             <div class="service-card-content">
 
                 <p class="service-category">
-                    COMPLETE WEBSITE
+                    WEB PAGE
                 </p>
+
 
                 <h3>
-                    E-Commerce Website
+                    Complete Landing Page
                 </h3>
 
+
                 <p class="service-short">
-                    A complete basic e-commerce website with
-                    essential pages and features.
+                    One complete landing page designed and
+                    developed according to your requirement.
                 </p>
+
 
                 <div class="service-bottom">
 
                     <strong>
-                        ₹6,666 – ₹9,999
+                        ₹1,500
                     </strong>
 
-                    <a
-                        href="service.html?service=ecommerce"
-                        class="view-service"
-                    >
-                        View Service
-                    </a>
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=landing-page"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="Complete Landing Page"
+                            data-price="₹1,500"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SERVICE 6
+        ================================================== -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-orange">
+
+                <div class="service-visual">
+                    🛍
+                </div>
+
+            </div>
+
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    PRODUCT PAGE
+                </p>
+
+
+                <h3>
+                    Product Page
+                </h3>
+
+
+                <p class="service-short">
+                    A basic or hand-coded product page for
+                    showcasing a product online.
+                </p>
+
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹2,000
+                    </strong>
+
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=product-page"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="Product Page"
+                            data-price="₹2,000"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SERVICE 7
+        ================================================== -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-yellow">
+
+                <div class="service-visual">
+                    UI
+                </div>
+
+            </div>
+
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    UI / UX
+                </p>
+
+
+                <h3>
+                    Website UI / UX
+                </h3>
+
+
+                <p class="service-short">
+                    Website UI/UX designed according to your
+                    requirements.
+                </p>
+
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹3,000
+                    </strong>
+
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=website-uiux"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="Website UI / UX"
+                            data-price="₹3,000"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SERVICE 8
+        ================================================== -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-orange">
+
+                <div class="service-visual">
+                    EC
+                </div>
+
+            </div>
+
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    E-COMMERCE
+                </p>
+
+
+                <h3>
+                    Shopify / WooCommerce Website
+                </h3>
+
+
+                <p class="service-short">
+                    Build a complete Shopify or WooCommerce
+                    website from scratch.
+                </p>
+
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹6,666
+                    </strong>
+
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=ecommerce-scratch"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="Shopify / WooCommerce Website"
+                            data-price="₹6,666"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SERVICE 9
+        ================================================== -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-yellow">
+
+                <div class="service-visual">
+                    🛒
+                </div>
+
+            </div>
+
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    WORDPRESS E-COMMERCE
+                </p>
+
+
+                <h3>
+                    WordPress E-Commerce Website
+                </h3>
+
+
+                <p class="service-short">
+                    Developer-level WordPress e-commerce
+                    website with basic and premium feature
+                    options.
+                </p>
+
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹9,999
+                    </strong>
+
+
+                    <div class="service-actions">
+
+                        <a
+                            href="service.html?service=wordpress-ecommerce"
+                            class="view-service"
+                        >
+                            View Service
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="book-card-button"
+                            data-service="WordPress E-Commerce Website"
+                            data-price="₹9,999"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -385,7 +817,10 @@
      ABOUT
 ========================================================= -->
 
-<section class="simple-section" id="about">
+<section
+    class="simple-section"
+    id="about"
+>
 
     <div class="simple-section-inner">
 
@@ -393,15 +828,25 @@
             ABOUT
         </p>
 
+
         <h2>
             Web services by Sakshi Madgundi
         </h2>
 
+
         <p>
-            I provide practical website design, development,
-            fixing and customization services for individuals,
-            creators and small businesses.
+            I provide website design, development,
+            customization and fixing services for
+            individuals, creators and businesses.
         </p>
+
+
+        <a
+            href="#contact"
+            class="primary-button"
+        >
+            Contact Me
+        </a>
 
     </div>
 
@@ -413,35 +858,178 @@
      CONTACT
 ========================================================= -->
 
-<section class="simple-section contact-section" id="contact">
+<section
+    class="simple-section contact-section"
+    id="contact"
+>
 
     <div class="simple-section-inner">
 
         <p class="section-label">
-            NEED SOMETHING CUSTOM?
+            CONTACT
         </p>
+
 
         <h2>
-            Let's build it.
+            Let's build your website.
         </h2>
 
+
         <p>
-            If your requirement does not exactly match one of
-            the listed services, contact Sakshi to discuss it.
+            Have a project in mind or need a service that
+            isn't listed? Contact me directly.
         </p>
+
+
+        <div class="contact-details">
+
+
+            <a
+                href="tel:+919960021658"
+                class="contact-item"
+            >
+
+                <span>
+                    Phone
+                </span>
+
+                <strong>
+                    +91 9960021658
+                </strong>
+
+            </a>
+
+
+            <a
+                href="mailto:sakshimadgundi2020@gmail.com"
+                class="contact-item"
+            >
+
+                <span>
+                    Email
+                </span>
+
+                <strong>
+                    sakshimadgundi2020@gmail.com
+                </strong>
+
+            </a>
+
+
+        </div>
+
 
         <a
             href="mailto:sakshimadgundi2020@gmail.com"
             class="primary-button"
         >
-            Contact Me
+            Email Me
         </a>
 
     </div>
 
 </section>
 
+
 </main>
+
+
+
+<!-- =========================================================
+     BOOKING / QR MODAL
+========================================================= -->
+
+<div
+    class="payment-overlay"
+    id="paymentOverlay"
+    aria-hidden="true"
+>
+
+    <div class="payment-box">
+
+
+        <button
+            type="button"
+            class="close-payment"
+            id="closePayment"
+            aria-label="Close payment"
+        >
+            ×
+        </button>
+
+
+        <p class="section-label">
+            BOOK THIS SERVICE
+        </p>
+
+
+        <h2 id="paymentServiceName">
+            Service
+        </h2>
+
+
+        <p
+            class="payment-price"
+            id="paymentPrice"
+        >
+            ₹0
+        </p>
+
+
+        <p class="payment-instruction">
+
+            Scan the QR code below to make your payment.
+            After payment, contact Sakshi and send your
+            payment screenshot along with your requirements.
+
+        </p>
+
+
+        <div class="qr-container">
+
+            <img
+                src="kotak-qr.png"
+                alt="Kotak payment QR code"
+                class="qr-image"
+            >
+
+        </div>
+
+
+        <p class="payment-note">
+
+            After payment, contact Sakshi using the phone
+            number or email below.
+
+        </p>
+
+
+        <div class="payment-contact-details">
+
+            <a href="tel:+919960021658">
+                📞 +91 9960021658
+            </a>
+
+
+            <a href="mailto:sakshimadgundi2020@gmail.com">
+                ✉ sakshimadgundi2020@gmail.com
+            </a>
+
+        </div>
+
+
+        <a
+            href="mailto:sakshimadgundi2020@gmail.com"
+            class="primary-button payment-contact"
+        >
+            I've Paid — Contact Sakshi
+        </a>
+
+
+    </div>
+
+</div>
+
 
 
 <!-- =========================================================
@@ -450,23 +1038,38 @@
 
 <footer class="site-footer">
 
+
     <div class="footer-inner">
 
-        <div>
+
+        <div class="footer-brand">
 
             <strong>
                 Sakshi Madgundi
             </strong>
 
+
             <p>
                 Web Services · Since 2026
             </p>
 
+
+            <p>
+                +91 9960021658
+            </p>
+
+
+            <p>
+                sakshimadgundi2020@gmail.com
+            </p>
+
         </div>
+
+
 
         <div class="footer-links">
 
-            <a href="index.html">
+            <a href="#services">
                 Services
             </a>
 
@@ -478,9 +1081,15 @@
                 Contact
             </a>
 
+            <a href="mailto:sakshimadgundi2020@gmail.com">
+                Email Me
+            </a>
+
         </div>
 
+
     </div>
+
 
 
     <div class="footer-bottom">
@@ -489,10 +1098,13 @@
 
     </div>
 
+
 </footer>
+
 
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
