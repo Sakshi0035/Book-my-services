@@ -24,6 +24,18 @@
 
 <body>
 
+<!-- =========================================================
+     SPLASH SCREEN
+========================================================= -->
+<div class="site-splash" id="siteSplash" aria-hidden="true">
+    <img
+        src="logo.png"
+        alt="Web Services — Sakshi Madgundi"
+        class="site-splash-logo"
+    >
+</div>
+
+
 
 <!-- =========================================================
      HEADER
@@ -1102,6 +1114,22 @@
 </footer>
 
 
+
+<script>
+(function () {
+    const splash = document.getElementById("siteSplash");
+
+    if (!splash) return;
+
+    window.setTimeout(function () {
+        splash.classList.add("hide");
+
+        window.setTimeout(function () {
+            splash.remove();
+        }, 700);
+    }, 5000);
+})();
+</script>
 
 <script src="script.js"></script>
 
