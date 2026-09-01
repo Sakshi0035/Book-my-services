@@ -2,1423 +2,1609 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sakshi Madgundi | Web Development & Digital Services</title>
-
+    <title>Sakshi Madgundi — Web Services</title>
     <meta
         name="description"
-        content="Web development, e-commerce, UI/UX and website improvement services by Sakshi Madgundi."
+        content="Website design, WordPress, WooCommerce and web development services by Sakshi Madgundi."
     >
 
-    <meta name="theme-color" content="#FFD600">
+    <style>
+        /* =========================================================
+           SAKSHI MADGUNDI — SERVICE STORE
+           PURE HTML + CSS + JS
+           GITHUB PAGES READY
+           ========================================================= */
 
-    <link rel="stylesheet" href="style.css">
+        :root {
+            --yellow: #ffd21f;
+            --yellow-light: #fff4a8;
+            --orange: #ff9f1c;
+            --orange-dark: #f27c00;
+
+            --bg: #ffffff;
+            --surface: #ffffff;
+            --surface-2: #f7f7f7;
+            --text: #111111;
+            --muted: #666666;
+            --border: #e7e7e7;
+
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+            --radius: 18px;
+            --header-height: 72px;
+        }
+
+        /* DARK THEME */
+        body.dark {
+            --bg: #090909;
+            --surface: #111111;
+            --surface-2: #171717;
+            --text: #ffffff;
+            --muted: #aaaaaa;
+            --border: #292929;
+
+            --shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: var(--bg);
+            color: var(--text);
+
+            min-height: 100vh;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            border: 0;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+            height: var(--header-height);
+
+            background: var(--surface);
+
+            border-bottom: 1px solid var(--border);
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .header-inner {
+            width: min(1180px, calc(100% - 32px));
+            height: 100%;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        /* BRAND */
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 20px;
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--yellow);
+            color: #111;
+
+            border-radius: 12px;
+
+            font-weight: 900;
+            font-size: 17px;
+        }
+
+        .brand-name span {
+            color: var(--orange-dark);
+        }
+
+        /* DESKTOP NAV */
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .desktop-nav a {
+            padding: 10px 13px;
+
+            color: var(--muted);
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--text);
+            background: var(--surface-2);
+        }
+
+        /* HEADER RIGHT */
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .theme-button,
+        .menu-button {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            background: var(--surface);
+            color: var(--text);
+
+            font-size: 18px;
+
+            transition: 0.2s ease;
+        }
+
+        .theme-button:hover,
+        .menu-button:hover {
+            background: var(--yellow);
+            color: #111;
+            border-color: var(--yellow);
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        /* =========================================================
+           MOBILE MENU
+           ========================================================= */
+
+        .mobile-menu {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            right: 0;
+
+            z-index: 999;
+
+            display: none;
+
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu-inner {
+            width: min(1180px, calc(100% - 32px));
+            margin: auto;
+
+            padding: 15px 0 20px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu a {
+            padding: 14px 5px;
+
+            border-bottom: 1px solid var(--border);
+
+            color: var(--text);
+
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           STORE INTRO
+           ========================================================= */
+
+        .store {
+            width: min(1180px, calc(100% - 32px));
+            margin: auto;
+
+            padding: 42px 0 70px;
+        }
+
+        .store-top {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            gap: 25px;
+
+            margin-bottom: 28px;
+        }
+
+        .store-title-area {
+            max-width: 650px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 7px 12px;
+
+            margin-bottom: 12px;
+
+            border-radius: 999px;
+
+            background: var(--yellow-light);
+            color: #111;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
+        body.dark .eyebrow {
+            background: #3a3100;
+            color: #ffe44d;
+        }
+
+        .store-title {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.05;
+
+            letter-spacing: -1.8px;
+
+            margin-bottom: 12px;
+        }
+
+        .store-title span {
+            color: var(--orange);
+        }
+
+        .store-description {
+            color: var(--muted);
+
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .seller-note {
+            flex-shrink: 0;
+
+            padding: 14px 17px;
+
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .seller-note strong {
+            color: var(--text);
+        }
+
+        /* =========================================================
+           CATEGORY BAR
+           ========================================================= */
+
+        .category-bar {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 24px;
+
+            overflow-x: auto;
+
+            scrollbar-width: none;
+        }
+
+        .category-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-button {
+            flex: 0 0 auto;
+
+            padding: 10px 16px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .category-button.active,
+        .category-button:hover {
+            background: var(--yellow);
+            color: #111;
+            border-color: var(--yellow);
+        }
+
+        /* =========================================================
+           SERVICE GRID
+           ========================================================= */
+
+        .service-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+        /* =========================================================
+           SERVICE CARD
+           ========================================================= */
+
+        .service-card {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            min-width: 0;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--yellow);
+        }
+
+        .service-image {
+            height: 205px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--yellow),
+                    var(--orange)
+                );
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        /* Placeholder when no service image is available */
+
+        .service-placeholder {
+            width: 76px;
+            height: 76px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 22px;
+
+            background: rgba(255, 255, 255, 0.9);
+            color: #111;
+
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .service-content {
+            display: flex;
+            flex-direction: column;
+
+            flex: 1;
+
+            padding: 19px;
+        }
+
+        .service-category {
+            margin-bottom: 7px;
+
+            color: var(--orange-dark);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        .service-name {
+            font-size: 19px;
+            line-height: 1.3;
+
+            margin-bottom: 9px;
+        }
+
+        .service-description {
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.6;
+
+            margin-bottom: 17px;
+        }
+
+        .service-features {
+            list-style: none;
+
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .service-features li::before {
+            content: "✓";
+
+            margin-right: 7px;
+
+            color: var(--orange-dark);
+            font-weight: 900;
+        }
+
+        .service-bottom {
+            margin-top: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 12px;
+        }
+
+        .price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-label {
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .price-value {
+            font-size: 17px;
+            font-weight: 900;
+        }
+
+        .book-button {
+            padding: 11px 16px;
+
+            background: var(--yellow);
+            color: #111;
+
+            border-radius: 11px;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .book-button:hover {
+            background: var(--orange);
+            transform: translateY(-1px);
+        }
+
+        /* =========================================================
+           QR PAYMENT MODAL
+           ========================================================= */
+
+        .qr-overlay {
+            position: fixed;
+            inset: 0;
+
+            z-index: 5000;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(0, 0, 0, 0.72);
+
+            backdrop-filter: blur(5px);
+        }
+
+        .qr-overlay.active {
+            display: flex;
+        }
+
+        .qr-modal {
+            width: min(420px, 100%);
+
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            padding: 24px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35);
+
+            text-align: center;
+
+            animation: qrOpen 0.2s ease;
+        }
+
+        @keyframes qrOpen {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .qr-close {
+            width: 36px;
+            height: 36px;
+
+            display: grid;
+            place-items: center;
+
+            margin-left: auto;
+            margin-bottom: 8px;
+
+            border-radius: 50%;
+
+            background: var(--surface-2);
+            color: var(--text);
+
+            font-size: 20px;
+        }
+
+        .qr-close:hover {
+            background: var(--yellow);
+            color: #111;
+        }
+
+        .qr-title {
+            font-size: 23px;
+            margin-bottom: 7px;
+        }
+
+        .qr-subtitle {
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.5;
+
+            margin-bottom: 17px;
+        }
+
+        .selected-service {
+            display: inline-block;
+
+            padding: 7px 11px;
+
+            margin-bottom: 15px;
+
+            background: var(--yellow-light);
+            color: #111;
+
+            border-radius: 8px;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        body.dark .selected-service {
+            background: #3a3100;
+            color: #ffe44d;
+        }
+
+        /* IMPORTANT:
+           QR FILE MUST BE IN SAME FOLDER AS index.html
+           File name: kotak-qr.png
+        */
+
+        .qr-image-wrapper {
+            width: 260px;
+            height: 260px;
+
+            margin: 0 auto 18px;
+
+            display: grid;
+            place-items: center;
+
+            background: #ffffff;
+
+            border: 5px solid var(--yellow);
+            border-radius: 16px;
+
+            overflow: hidden;
+        }
+
+        .qr-image-wrapper img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+        .qr-error {
+            display: none;
+
+            padding: 20px;
+
+            color: #b00020;
+
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .qr-instruction {
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+        }
+
+        .payment-note {
+            padding: 11px 13px;
+
+            background: var(--surface-2);
+
+            border-radius: 10px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .site-footer {
+            border-top: 1px solid var(--border);
+
+            padding: 25px 0;
+
+            background: var(--surface);
+        }
+
+        .footer-inner {
+            width: min(1180px, calc(100% - 32px));
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-name {
+            font-weight: 800;
+        }
+
+        .footer-text {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .desktop-nav {
+                display: none;
+            }
+
+            .menu-button {
+                display: grid;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .store-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .seller-note {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 620px) {
+
+            :root {
+                --header-height: 64px;
+            }
+
+            .header-inner {
+                width: min(100% - 22px, 1180px);
+            }
+
+            .brand {
+                font-size: 16px;
+            }
+
+            .brand-mark {
+                width: 34px;
+                height: 34px;
+                border-radius: 10px;
+            }
+
+            .header-actions {
+                gap: 6px;
+            }
+
+            .theme-button,
+            .menu-button {
+                width: 38px;
+                height: 38px;
+            }
+
+            .store {
+                width: min(100% - 22px, 1180px);
+
+                padding-top: 30px;
+                padding-bottom: 50px;
+            }
+
+            .store-title {
+                font-size: 34px;
+                letter-spacing: -1px;
+            }
+
+            .store-description {
+                font-size: 14px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .service-image {
+                height: 190px;
+            }
+
+            .service-content {
+                padding: 17px;
+            }
+
+            .qr-modal {
+                padding: 18px;
+                border-radius: 18px;
+            }
+
+            .qr-image-wrapper {
+                width: min(270px, 78vw);
+                height: min(270px, 78vw);
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =========================================================
+         HEADER
+         ========================================================= -->
 
-<header class="site-header" id="siteHeader">
+    <header class="site-header">
 
-    <div class="header-inner">
+        <div class="header-inner">
 
-        <a href="#home" class="brand">
-            <span class="brand-mark">S</span>
+            <a href="index.html" class="brand">
+                <span class="brand-mark">S</span>
 
-            <span class="brand-text">
-                <strong>Sakshi</strong>
-                <small>Madgundi</small>
-            </span>
-        </a>
-
-
-        <nav class="desktop-nav">
-
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#about">About</a>
-
-            <a href="#booking" class="nav-book">
-                Book a Service
+                <span class="brand-name">
+                    Sakshi <span>Madgundi</span>
+                </span>
             </a>
 
-        </nav>
+            <nav class="desktop-nav">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
+            <div class="header-actions">
 
-        <div class="header-actions">
+                <button
+                    type="button"
+                    class="theme-button"
+                    id="themeButton"
+                    aria-label="Change theme"
+                    title="Change theme"
+                >
+                    ☀
+                </button>
 
-            <button
-                class="theme-toggle"
-                id="themeToggle"
-                type="button"
-                aria-label="Toggle dark mode"
-            >
-                <span id="themeIcon">☾</span>
-            </button>
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
 
-            <button
-                class="mobile-menu-btn"
-                id="mobileMenuBtn"
-                type="button"
-                aria-label="Open menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            </div>
 
         </div>
 
-    </div>
+    </header>
 
 
-    <!-- MOBILE MENU -->
+    <!-- =========================================================
+         MOBILE MENU
+         ========================================================= -->
 
     <div class="mobile-menu" id="mobileMenu">
 
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#about">About</a>
+        <div class="mobile-menu-inner">
 
-        <a href="#booking" class="mobile-book">
-            Book a Service
-        </a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
 
-    </div>
-
-</header>
-
-
-<main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero section" id="home">
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            <span></span>
-            Web Development • E-Commerce • UI/UX
-        </div>
-
-        <h1>
-            Websites built
-            <span>around your requirements.</span>
-        </h1>
-
-        <p class="hero-description">
-            I'm Sakshi Madgundi. I build responsive websites,
-            e-commerce experiences and custom digital interfaces —
-            and help fix existing website problems.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#services" class="btn btn-primary">
-                Explore Services
-                <span>→</span>
-            </a>
-
-            <a href="#booking" class="btn btn-secondary">
-                Book a Service
-            </a>
-
-        </div>
-
-
-        <div class="hero-note">
-            <span>✦</span>
-            Custom requirements are welcome
         </div>
 
     </div>
 
 
-    <div class="hero-visual">
+    <!-- =========================================================
+         SERVICE STORE
+         ========================================================= -->
 
-        <div class="visual-glow"></div>
+    <main class="store" id="services">
 
-        <div class="floating-card card-one">
-            <span>WEB</span>
-            <strong>Development</strong>
-        </div>
+        <div class="store-top">
 
-        <div class="floating-card card-two">
-            <span>SHOP</span>
-            <strong>E-Commerce</strong>
-        </div>
+            <div class="store-title-area">
 
-        <div class="floating-card card-three">
-            <span>UI</span>
-            <strong>Design</strong>
-        </div>
-
-
-        <div class="hero-device">
-
-            <div class="device-top">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="device-content">
-
-                <div class="device-line large"></div>
-                <div class="device-line"></div>
-                <div class="device-line short"></div>
-
-                <div class="device-grid">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="eyebrow">
+                    WEB SERVICES BY SAKSHI
                 </div>
 
-            </div>
+                <h1 class="store-title">
+                    Build it. Fix it.
+                    <span>Make it better.</span>
+                </h1>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     QUICK SERVICE STRIP
-===================================================== -->
-
-<section class="service-strip">
-
-    <div>Website Development</div>
-    <div>WordPress</div>
-    <div>WooCommerce</div>
-    <div>UI/UX</div>
-    <div>Website Fixes</div>
-    <div>E-Commerce</div>
-
-</section>
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section class="section services-section" id="services">
-
-    <div class="section-heading">
-
-        <div>
-            <span class="section-label">WHAT I OFFER</span>
-
-            <h2>
-                Services made
-                <span>for real projects.</span>
-            </h2>
-        </div>
-
-        <p>
-            Choose a service below and tell me exactly what
-            you need. If your requirement is different,
-            you can request a custom solution too.
-        </p>
-
-    </div>
-
-
-    <div class="services-grid" id="servicesGrid"></div>
-
-</section>
-
-
-<!-- =====================================================
-     CUSTOM REQUIREMENT CTA
-===================================================== -->
-
-<section class="custom-section section">
-
-    <div class="custom-card">
-
-        <div class="custom-icon">
-            ✦
-        </div>
-
-        <div class="custom-content">
-
-            <span class="section-label">
-                HAVE SOMETHING DIFFERENT?
-            </span>
-
-            <h2>
-                Don't see exactly
-                <span>what you need?</span>
-            </h2>
-
-            <p>
-                Tell me what you want to build. Additional
-                features or custom functionality can be
-                discussed and quoted separately.
-            </p>
-
-        </div>
-
-        <a href="#booking" class="btn btn-dark">
-            Request a Custom Service →
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     WORK
-===================================================== -->
-
-<section class="section work-section" id="work">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="section-label">
-                SELECTED WORK
-            </span>
-
-            <h2>
-                Things I've
-                <span>worked on.</span>
-            </h2>
-
-        </div>
-
-        <p>
-            A selection of website, e-commerce and digital
-            interface work. Project details can be updated
-            whenever new work is added.
-        </p>
-
-    </div>
-
-
-    <div class="work-grid">
-
-        <article class="work-card">
-
-            <div class="work-image work-image-one">
-                <div class="mock-browser">
-                    <div class="mock-top"></div>
-                    <div class="mock-body">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="work-info">
-
-                <span>WEB DESIGN</span>
-
-                <h3>
-                    Project One
-                </h3>
-
-                <p>
-                    Website interface and responsive
-                    frontend experience.
+                <p class="store-description">
+                    Choose the web service you need. View the service,
+                    check what's included, and book it directly.
                 </p>
 
-                <a href="#booking">
-                    Discuss a similar project →
-                </a>
-
             </div>
 
-        </article>
-
-
-        <article class="work-card">
-
-            <div class="work-image work-image-two">
-                <div class="mock-phone">
-                    <div class="mock-phone-top"></div>
-                    <div class="mock-phone-body">
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
+            <div class="seller-note">
+                Services by <strong>Sakshi Madgundi</strong>
             </div>
-
-            <div class="work-info">
-
-                <span>E-COMMERCE</span>
-
-                <h3>
-                    Project Two
-                </h3>
-
-                <p>
-                    E-commerce experience with product,
-                    cart and shopping flow.
-                </p>
-
-                <a href="#booking">
-                    Discuss a similar project →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <article class="work-card">
-
-            <div class="work-image work-image-three">
-
-                <div class="mock-ui">
-
-                    <div class="mock-ui-sidebar"></div>
-
-                    <div class="mock-ui-main">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="work-info">
-
-                <span>UI / UX</span>
-
-                <h3>
-                    Project Three
-                </h3>
-
-                <p>
-                    Custom interface and user experience
-                    concept.
-                </p>
-
-                <a href="#booking">
-                    Discuss a similar project →
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     HOW IT WORKS
-===================================================== -->
-
-<section class="section process-section" id="how-it-works">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="section-label">
-                SIMPLE PROCESS
-            </span>
-
-            <h2>
-                From idea
-                <span>to project.</span>
-            </h2>
-
-        </div>
-
-        <p>
-            A straightforward process so you know what happens
-            after you book a service.
-        </p>
-
-    </div>
-
-
-    <div class="process-grid">
-
-        <div class="process-card">
-
-            <div class="process-number">
-                01
-            </div>
-
-            <div class="process-icon">
-                ◉
-            </div>
-
-            <h3>
-                Choose a Service
-            </h3>
-
-            <p>
-                Select the service that best matches
-                what you want to build or fix.
-            </p>
 
         </div>
 
 
-        <div class="process-card">
+        <!-- CATEGORY FILTER -->
 
-            <div class="process-number">
-                02
-            </div>
+        <div class="category-bar">
 
-            <div class="process-icon">
-                ✎
-            </div>
-
-            <h3>
-                Tell Me What You Need
-            </h3>
-
-            <p>
-                Share your project details, references,
-                deadline and custom requirements.
-            </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-            <div class="process-number">
-                03
-            </div>
-
-            <div class="process-icon">
-                ₹
-            </div>
-
-            <h3>
-                Make the Payment
-            </h3>
-
-            <p>
-                Use the provided payment QR and keep
-                your transaction details ready.
-            </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-            <div class="process-number">
-                04
-            </div>
-
-            <div class="process-icon">
-                → 
-            </div>
-
-            <h3>
-                Project Begins
-            </h3>
-
-            <p>
-                Once the requirements and project details
-                are confirmed, the work can begin.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section class="section about-section" id="about">
-
-    <div class="about-visual">
-
-        <div class="about-circle">
-            SM
-        </div>
-
-        <div class="about-yellow-block"></div>
-
-    </div>
-
-
-    <div class="about-content">
-
-        <span class="section-label">
-            ABOUT ME
-        </span>
-
-        <h2>
-            Hi, I'm
-            <span>Sakshi Madgundi.</span>
-        </h2>
-
-        <p>
-            I work on websites, e-commerce experiences,
-            UI/UX and digital interfaces with a focus on
-            clean design, responsive layouts and practical
-            functionality.
-        </p>
-
-        <p>
-            Whether you need something built from scratch
-            or need help fixing an existing website,
-            you can tell me what you're trying to achieve
-            and we'll start from there.
-        </p>
-
-        <a href="#booking" class="text-link">
-            Work with me →
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FAQ
-===================================================== -->
-
-<section class="section faq-section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="section-label">
-                QUESTIONS
-            </span>
-
-            <h2>
-                Frequently
-                <span>asked.</span>
-            </h2>
-
-        </div>
-
-    </div>
-
-
-    <div class="faq-list">
-
-        <div class="faq-item">
-
-            <button class="faq-question" type="button">
-                <span>What services do you provide?</span>
-                <span class="faq-plus">+</span>
+            <button
+                class="category-button active"
+                data-category="all"
+                type="button"
+            >
+                All Services
             </button>
 
-            <div class="faq-answer">
-                <p>
-                    I provide website development, WordPress
-                    and WooCommerce fixes, UI/UX, landing pages,
-                    product pages and e-commerce website development.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button class="faq-question" type="button">
-                <span>What does "Starting at" mean?</span>
-                <span class="faq-plus">+</span>
+            <button
+                class="category-button"
+                data-category="wordpress"
+                type="button"
+            >
+                WordPress
             </button>
 
-            <div class="faq-answer">
-                <p>
-                    The displayed amount is the starting price
-                    for that service. Additional requirements,
-                    pages or complex functionality may change
-                    the final price.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button class="faq-question" type="button">
-                <span>Can I request custom features?</span>
-                <span class="faq-plus">+</span>
+            <button
+                class="category-button"
+                data-category="website"
+                type="button"
+            >
+                Websites
             </button>
 
-            <div class="faq-answer">
-                <p>
-                    Yes. Describe your additional requirements
-                    while booking. I will review them and confirm
-                    whether they can be implemented and whether
-                    an additional charge applies.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button class="faq-question" type="button">
-                <span>Do you offer a Premium package?</span>
-                <span class="faq-plus">+</span>
+            <button
+                class="category-button"
+                data-category="woocommerce"
+                type="button"
+            >
+                WooCommerce
             </button>
 
-            <div class="faq-answer">
-                <p>
-                    No. There is no predefined Premium package.
-                    Services have starting prices, while additional
-                    or custom functionality is discussed separately.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button class="faq-question" type="button">
-                <span>Can you fix an existing WordPress website?</span>
-                <span class="faq-plus">+</span>
+            <button
+                class="category-button"
+                data-category="design"
+                type="button"
+            >
+                Design
             </button>
 
-            <div class="faq-answer">
-                <p>
-                    Yes. You can describe the issue during booking
-                    and provide your existing website URL if available.
-                </p>
-            </div>
-
         </div>
 
 
-        <div class="faq-item">
+        <!-- =====================================================
+             SERVICE CARDS
+             ===================================================== -->
 
-            <button class="faq-question" type="button">
-                <span>How does payment work?</span>
-                <span class="faq-plus">+</span>
-            </button>
+        <section class="service-grid" id="serviceGrid">
 
-            <div class="faq-answer">
-                <p>
-                    Payment can be made using the provided QR code.
-                    After payment, enter your transaction or UTR ID
-                    and send the booking details through WhatsApp.
-                </p>
-            </div>
 
-        </div>
+            <!-- SERVICE 1 -->
 
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     BOOKING
-===================================================== -->
-
-<section class="section booking-section" id="booking">
-
-    <div class="booking-heading">
-
-        <span class="section-label">
-            LET'S WORK TOGETHER
-        </span>
-
-        <h2>
-            Book a service
-            <span>with Sakshi.</span>
-        </h2>
-
-        <p>
-            Choose what you need, tell me about your project
-            and prepare your booking request.
-        </p>
-
-    </div>
-
-
-    <div class="booking-layout">
-
-
-        <!-- LEFT SIDE -->
-
-        <div class="booking-form-area">
-
-
-            <!-- STEP 1 -->
-
-            <div class="booking-step">
-
-                <div class="step-heading">
-
-                    <span class="step-number">
-                        01
-                    </span>
-
-                    <div>
-                        <h3>Choose your service</h3>
-                        <p>
-                            Select the service you want to book.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="booking-services"
-                    id="bookingServices"
-                ></div>
-
-            </div>
-
-
-            <!-- STEP 2 -->
-
-            <div class="booking-step">
-
-                <div class="step-heading">
-
-                    <span class="step-number">
-                        02
-                    </span>
-
-                    <div>
-                        <h3>Custom requirements</h3>
-
-                        <p>
-                            Need something additional?
-                            Tell me here.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="custom-choice">
-
-                    <label class="choice-option">
-
-                        <input
-                            type="radio"
-                            name="customChoice"
-                            value="standard"
-                            checked
-                        >
-
-                        <span class="choice-box">
-
-                            <strong>
-                                Standard service
-                            </strong>
-
-                            <small>
-                                I need the listed service.
-                            </small>
-
-                        </span>
-
-                    </label>
-
-
-                    <label class="choice-option">
-
-                        <input
-                            type="radio"
-                            name="customChoice"
-                            value="custom"
-                        >
-
-                        <span class="choice-box">
-
-                            <strong>
-                                I have custom requirements
-                            </strong>
-
-                            <small>
-                                I need additional features or functionality.
-                            </small>
-
-                        </span>
-
-                    </label>
-
-                </div>
-
-
-                <div
-                    class="custom-requirements"
-                    id="customRequirements"
-                >
-
-                    <label for="additionalRequirements">
-                        Additional / Custom Requirements
-                    </label>
-
-                    <textarea
-                        id="additionalRequirements"
-                        rows="5"
-                        placeholder="Tell me what additional feature or functionality you need..."
-                    ></textarea>
-
-                    <small>
-                        Custom requirements will be reviewed before
-                        the final price is confirmed.
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 3 -->
-
-            <div class="booking-step">
-
-                <div class="step-heading">
-
-                    <span class="step-number">
-                        03
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Your project details
-                        </h3>
-
-                        <p>
-                            Tell me about yourself and the project.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <form id="bookingForm" novalidate>
-
-                    <div class="form-grid">
-
-                        <div class="form-field">
-
-                            <label for="fullName">
-                                Full Name *
-                            </label>
-
-                            <input
-                                type="text"
-                                id="fullName"
-                                placeholder="Your name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-field">
-
-                            <label for="email">
-                                Email Address *
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                placeholder="you@example.com"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-field">
-
-                            <label for="whatsapp">
-                                WhatsApp Number *
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="whatsapp"
-                                placeholder="Your WhatsApp number"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-field">
-
-                            <label for="businessName">
-                                Business / Brand Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="businessName"
-                                placeholder="Your business name"
-                            >
-
-                        </div>
-
-
-                        <div class="form-field full">
-
-                            <label for="websiteUrl">
-                                Existing Website URL
-                            </label>
-
-                            <input
-                                type="url"
-                                id="websiteUrl"
-                                placeholder="https://yourwebsite.com"
-                            >
-
-                        </div>
-
-
-                        <div class="form-field full">
-
-                            <label for="referenceUrl">
-                                Reference Website / Design URL
-                            </label>
-
-                            <input
-                                type="url"
-                                id="referenceUrl"
-                                placeholder="https://reference.com"
-                            >
-
-                        </div>
-
-
-                        <div class="form-field">
-
-                            <label for="deadline">
-                                Preferred Deadline
-                            </label>
-
-                            <input
-                                type="date"
-                                id="deadline"
-                            >
-
-                        </div>
-
-
-                        <div class="form-field full">
-
-                            <label for="projectDescription">
-                                Project Description *
-                            </label>
-
-                            <textarea
-                                id="projectDescription"
-                                rows="6"
-                                placeholder="Tell me what you want to build, fix or design..."
-                                required
-                            ></textarea>
-
-                        </div>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-
-            <!-- STEP 4 PAYMENT -->
-
-            <div class="booking-step payment-step">
-
-                <div class="step-heading">
-
-                    <span class="step-number">
-                        04
-                    </span>
-
-                    <div>
-
-                        <h3>
-                            Payment
-                        </h3>
-
-                        <p>
-                            Make your payment using the QR code.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="payment-box">
-
-                    <div class="qr-area">
-
-                        <div class="qr-frame">
-
-                            <img
-                                src="kotak-qr.png"
-                                alt="Kotak payment QR code"
-                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                            >
-
-                            <div class="qr-placeholder">
-                                <strong>YOUR QR</strong>
-                                <span>
-                                    Add kotak-qr.png
-                                </span>
-                            </div>
-
-                        </div>
-
-                        <span class="qr-label">
-                            Scan to pay
-                        </span>
-
-                    </div>
-
-
-                    <div class="payment-details">
-
-                        <span class="payment-label">
-                            PAYMENT
-                        </span>
-
-                        <h3>
-                            ₹<span id="paymentAmount">0</span>
-                        </h3>
-
-                        <p>
-                            This is the starting amount for
-                            your selected service.
-                        </p>
-
-                        <div class="payment-note">
-                            <strong>Important</strong>
-
-                            <span>
-                                Custom requirements may change
-                                the final price after review.
-                            </span>
-                        </div>
-
-
-                        <div class="form-field">
-
-                            <label for="utr">
-                                Transaction / UTR ID
-                            </label>
-
-                            <input
-                                type="text"
-                                id="utr"
-                                placeholder="Enter your transaction / UTR ID"
-                            >
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- GENERATE -->
-
-            <div class="booking-submit-area">
-
-                <button
-                    type="button"
-                    class="btn btn-primary btn-large"
-                    id="generateBooking"
-                >
-                    Prepare My Booking
-                    <span>→</span>
-                </button>
-
-                <p>
-                    Your booking details will be prepared locally
-                    and can then be sent through WhatsApp.
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- RIGHT SIDE SUMMARY -->
-
-        <aside class="booking-summary">
-
-            <div class="summary-top">
-
-                <span>
-                    BOOKING SUMMARY
-                </span>
-
-                <div class="summary-status">
-                    ● Live
-                </div>
-
-            </div>
-
-
-            <div class="summary-service">
-
-                <small>
-                    SERVICE
-                </small>
-
-                <h3 id="summaryService">
-                    Select a service
-                </h3>
-
-            </div>
-
-
-            <div class="summary-price">
-
-                <small>
-                    STARTING PRICE
-                </small>
-
-                <strong>
-                    ₹<span id="summaryPrice">0</span>
-                </strong>
-
-            </div>
-
-
-            <div class="summary-divider"></div>
-
-
-            <div class="summary-details">
-
-                <div>
-                    <span>Provider</span>
-                    <strong>Sakshi Madgundi</strong>
-                </div>
-
-                <div>
-                    <span>Custom requirements</span>
-                    <strong id="summaryCustom">
-                        Standard service
-                    </strong>
-                </div>
-
-            </div>
-
-
-            <div class="summary-notice">
-
-                <span>!</span>
-
-                <p>
-                    Listed prices are starting prices.
-                    Additional requirements may affect
-                    the final amount.
-                </p>
-
-            </div>
-
-
-            <div
-                class="booking-ready"
-                id="bookingReady"
+            <article
+                class="service-card"
+                data-category="wordpress woocommerce"
             >
 
-                <div class="ready-icon">
-                    ✓
+                <a
+                    href="service.html?service=wordpress-fix"
+                    class="service-image"
+                    aria-label="View WordPress issue fixing service"
+                >
+                    <div class="service-placeholder">WP</div>
+                </a>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        WordPress / WooCommerce
+                    </div>
+
+                    <h2 class="service-name">
+                        WordPress Issue Fix
+                    </h2>
+
+                    <p class="service-description">
+                        Fix a specific WordPress or WooCommerce issue
+                        affecting your website.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>One specific issue</li>
+                        <li>Theme or plugin related fixes</li>
+                        <li>Basic troubleshooting</li>
+                    </ul>
+
+                    <div class="service-bottom">
+
+                        <div class="price">
+                            <span class="price-label">Starting from</span>
+                            <span class="price-value">₹199 – ₹599</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="book-button"
+                            data-service="WordPress Issue Fix"
+                            data-price="₹199 – ₹599"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <h3>
-                    Booking Request Ready
-                </h3>
-
-                <p>
-                    Your booking details have been prepared.
-                    Send them to Sakshi through WhatsApp.
-                </p>
+            </article>
 
 
-                <button
-                    type="button"
-                    class="btn whatsapp-btn"
-                    id="whatsappBtn"
+            <!-- SERVICE 2 -->
+
+            <article
+                class="service-card"
+                data-category="wordpress"
+            >
+
+                <a
+                    href="service.html?service=header-menu"
+                    class="service-image"
+                    aria-label="View header and menu service"
                 >
-                    Send on WhatsApp
-                    <span>↗</span>
-                </button>
+                    <div class="service-placeholder">☰</div>
+                </a>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        WordPress
+                    </div>
+
+                    <h2 class="service-name">
+                        Header / Menu Fix
+                    </h2>
+
+                    <p class="service-description">
+                        Fix navigation, responsive header, menus,
+                        spacing and layout problems.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>Desktop navigation</li>
+                        <li>Mobile menu</li>
+                        <li>Responsive adjustments</li>
+                    </ul>
+
+                    <div class="service-bottom">
+
+                        <div class="price">
+                            <span class="price-label">Starting from</span>
+                            <span class="price-value">₹199 – ₹599</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="book-button"
+                            data-service="Header / Menu Fix"
+                            data-price="₹199 – ₹599"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
 
 
-                <button
-                    type="button"
-                    class="copy-btn"
-                    id="copyBtn"
+            <!-- SERVICE 3 -->
+
+            <article
+                class="service-card"
+                data-category="design website"
+            >
+
+                <a
+                    href="service.html?service=design-to-website"
+                    class="service-image"
+                    aria-label="View design to website service"
                 >
-                    Copy Booking Details
-                </button>
+                    <div class="service-placeholder">✦</div>
+                </a>
 
+                <div class="service-content">
+
+                    <div class="service-category">
+                        Web Design
+                    </div>
+
+                    <h2 class="service-name">
+                        Design → Website
+                    </h2>
+
+                    <p class="service-description">
+                        Turn an existing design into a responsive
+                        working webpage.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>HTML / CSS implementation</li>
+                        <li>Responsive layout</li>
+                        <li>Design matching</li>
+                    </ul>
+
+                    <div class="service-bottom">
+
+                        <div class="price">
+                            <span class="price-label">Starting from</span>
+                            <span class="price-value">₹1,500 – ₹3,000</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="book-button"
+                            data-service="Design to Website"
+                            data-price="₹1,500 – ₹3,000"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 4 -->
+
+            <article
+                class="service-card"
+                data-category="website"
+            >
+
+                <a
+                    href="service.html?service=complete-website"
+                    class="service-image"
+                    aria-label="View complete website service"
+                >
+                    <div class="service-placeholder">WEB</div>
+                </a>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        Website
+                    </div>
+
+                    <h2 class="service-name">
+                        Complete Website
+                    </h2>
+
+                    <p class="service-description">
+                        A complete basic website built according to
+                        your requirements.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>Multiple website sections</li>
+                        <li>Responsive design</li>
+                        <li>Basic functionality</li>
+                    </ul>
+
+                    <div class="service-bottom">
+
+                        <div class="price">
+                            <span class="price-label">Starting from</span>
+                            <span class="price-value">₹6,666 – ₹9,999</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="book-button"
+                            data-service="Complete Website"
+                            data-price="₹6,666 – ₹9,999"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 5 -->
+
+            <article
+                class="service-card"
+                data-category="woocommerce wordpress"
+            >
+
+                <a
+                    href="service.html?service=woocommerce"
+                    class="service-image"
+                    aria-label="View WooCommerce service"
+                >
+                    <div class="service-placeholder">🛒</div>
+                </a>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        WooCommerce
+                    </div>
+
+                    <h2 class="service-name">
+                        WooCommerce Setup / Fix
+                    </h2>
+
+                    <p class="service-description">
+                        Product, cart, checkout and basic WooCommerce
+                        functionality setup or fixes.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>Cart related fixes</li>
+                        <li>Product setup</li>
+                        <li>Basic checkout fixes</li>
+                    </ul>
+
+                    <div class="service-bottom">
+
+                        <div class="price">
+                            <span class="price-label">Starting from</span>
+                            <span class="price-value">₹999+</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="book-button"
+                            data-service="WooCommerce Setup / Fix"
+                            data-price="₹999+"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 6 -->
+
+            <article
+                class="service-card"
+                data-category="website design"
+            >
+
+                <a
+                    href="service.html?service=custom-website"
+                    class="service-image"
+                    aria-label="View custom website service"
+                >
+                    <div class="service-placeholder">✎</div>
+                </a>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        Custom Website
+                    </div>
+
+                    <h2 class="service-name">
+                        Custom Website Work
+                    </h2>
+
+                    <p class="service-description">
+                        Custom website work based on the exact
+                        requirements of your project.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>Custom UI</li>
+                        <li>Responsive implementation</li>
+                        <li>Requirement based pricing</li>
+                    </ul>
+
+                    <div class="service-bottom">
+
+                        <div class="price">
+                            <span class="price-label">Starting from</span>
+                            <span class="price-value">₹1,500+</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="book-button"
+                            data-service="Custom Website Work"
+                            data-price="₹1,500+"
+                        >
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         ABOUT
+         ========================================================= -->
+
+    <section
+        id="about"
+        style="
+            width:min(1180px,calc(100% - 32px));
+            margin:0 auto;
+            padding:0 0 65px;
+        "
+    >
+
+        <div
+            style="
+                padding:28px;
+                background:var(--surface);
+                border:1px solid var(--border);
+                border-radius:18px;
+            "
+        >
+
+            <div
+                style="
+                    color:var(--orange-dark);
+                    font-size:11px;
+                    font-weight:800;
+                    text-transform:uppercase;
+                    letter-spacing:.7px;
+                    margin-bottom:8px;
+                "
+            >
+                About
             </div>
 
-        </aside>
+            <h2 style="font-size:26px;margin-bottom:9px;">
+                Hi, I'm Sakshi Madgundi.
+            </h2>
 
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FINAL CTA
-===================================================== -->
-
-<section class="final-cta section">
-
-    <div>
-
-        <span class="section-label">
-            HAVE A PROJECT?
-        </span>
-
-        <h2>
-            Let's build
-            <span>something useful.</span>
-        </h2>
-
-        <p>
-            Tell me what you're trying to create,
-            fix or improve.
-        </p>
-
-    </div>
-
-
-    <a href="#booking" class="btn btn-dark btn-large">
-        Book a Service →
-    </a>
-
-</section>
-
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="site-footer">
-
-    <div class="footer-main">
-
-        <div class="footer-brand">
-
-            <a href="#home" class="brand footer-logo">
-
-                <span class="brand-mark">
-                    S
-                </span>
-
-                <span class="brand-text">
-
-                    <strong>
-                        Sakshi
-                    </strong>
-
-                    <small>
-                        Madgundi
-                    </small>
-
-                </span>
-
-            </a>
-
-
-            <p>
-                Web Development & Digital Services.
+            <p
+                style="
+                    color:var(--muted);
+                    line-height:1.7;
+                    font-size:14px;
+                    max-width:700px;
+                "
+            >
+                I provide practical website, WordPress, WooCommerce
+                and web design services. Choose a service above and
+                book it directly.
             </p>
 
         </div>
 
+    </section>
 
-        <div class="footer-links">
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-inner">
 
             <div>
+                <div class="footer-name">
+                    Sakshi Madgundi
+                </div>
 
-                <strong>
-                    Explore
-                </strong>
+                <div class="footer-text">
+                    Web & WordPress Services
+                </div>
+            </div>
 
-                <a href="#services">
-                    Services
-                </a>
+            <div class="footer-text">
+                © <span id="year"></span> Sakshi Madgundi
+            </div>
 
-                <a href="#work">
-                    Work
-                </a>
+        </div>
 
-                <a href="#about">
-                    About
-                </a>
+    </footer>
+
+
+    <!-- =========================================================
+         QR BOOKING / PAYMENT MODAL
+         ========================================================= -->
+
+    <div
+        class="qr-overlay"
+        id="qrOverlay"
+        aria-hidden="true"
+    >
+
+        <div
+            class="qr-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="qrTitle"
+        >
+
+            <button
+                type="button"
+                class="qr-close"
+                id="qrClose"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <h2
+                class="qr-title"
+                id="qrTitle"
+            >
+                Book This Service
+            </h2>
+
+            <p class="qr-subtitle">
+                Scan the QR code below to make the payment.
+            </p>
+
+            <div
+                class="selected-service"
+                id="selectedService"
+            >
+                Selected Service
+            </div>
+
+            <div class="qr-image-wrapper">
+
+                <!--
+                    IMPORTANT:
+                    Your GitHub screenshot shows:
+
+                    index.html
+                    kotak-qr.png
+                    script.js
+                    style.css
+
+                    Therefore this MUST be:
+                    kotak-qr.png
+
+                    NOT:
+                    /kotak-qr.png
+                    ./images/kotak-qr.png
+                    kotak-qr.jpg
+                    kotak-qr.PNG
+                -->
+
+                <img
+                    id="kotakQR"
+                    src="kotak-qr.png"
+                    alt="Kotak payment QR code"
+                >
+
+                <div
+                    class="qr-error"
+                    id="qrError"
+                >
+                    QR code could not be loaded.
+                    Please make sure the file is named
+                    <strong>kotak-qr.png</strong>
+                    and is in the same folder as index.html.
+                </div>
 
             </div>
 
+            <p class="qr-instruction">
+                Scan the QR using your preferred UPI app and
+                complete the payment.
+            </p>
 
-            <div>
-
-                <strong>
-                    Start
-                </strong>
-
-                <a href="#booking">
-                    Book a Service
-                </a>
-
-                <a href="#how-it-works">
-                    How It Works
-                </a>
-
-                <a href="#home">
-                    Back to Top ↑
-                </a>
-
+            <div class="payment-note">
+                After payment, please contact Sakshi with your
+                payment confirmation and service requirement.
             </div>
 
         </div>
@@ -1426,32 +1612,302 @@
     </div>
 
 
-    <div class="footer-bottom">
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
 
-        <span>
-            © 2026 Sakshi Madgundi. All rights reserved.
-        </span>
+    <script>
 
-        <span>
-            Built with HTML • CSS • JavaScript
-        </span>
+        /* =====================================================
+           YEAR
+           ===================================================== */
 
-    </div>
-
-</footer>
-
-
-<!-- TOAST -->
-
-<div class="toast" id="toast">
-    <span>✓</span>
-    <p id="toastMessage">
-        Done
-    </p>
-</div>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
 
 
-<script src="script.js"></script>
+        /* =====================================================
+           THEME
+           ===================================================== */
+
+        const themeButton =
+            document.getElementById("themeButton");
+
+        const savedTheme =
+            localStorage.getItem("sakshi-theme");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+            themeButton.textContent = "☾";
+        }
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark");
+
+            const dark =
+                document.body.classList.contains("dark");
+
+            localStorage.setItem(
+                "sakshi-theme",
+                dark ? "dark" : "light"
+            );
+
+            themeButton.textContent =
+                dark ? "☾" : "☀";
+
+        });
+
+
+        /* =====================================================
+           MOBILE MENU
+           ===================================================== */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        menuButton.addEventListener("click", function () {
+
+            const open =
+                mobileMenu.classList.toggle("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+
+            menuButton.textContent =
+                open ? "×" : "☰";
+
+        });
+
+
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    mobileMenu.classList.remove("active");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuButton.textContent = "☰";
+
+                });
+
+            });
+
+
+        /* =====================================================
+           QR MODAL
+           ===================================================== */
+
+        const qrOverlay =
+            document.getElementById("qrOverlay");
+
+        const qrClose =
+            document.getElementById("qrClose");
+
+        const selectedService =
+            document.getElementById("selectedService");
+
+        const qrImage =
+            document.getElementById("kotakQR");
+
+        const qrError =
+            document.getElementById("qrError");
+
+
+        function openQR(serviceName, price) {
+
+            selectedService.textContent =
+                serviceName + " • " + price;
+
+            qrOverlay.classList.add("active");
+
+            qrOverlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+
+        function closeQR() {
+
+            qrOverlay.classList.remove("active");
+
+            qrOverlay.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        /* BOOK NOW */
+
+        document
+            .querySelectorAll(".book-button")
+            .forEach(function (button) {
+
+                button.addEventListener("click", function (event) {
+
+                    /*
+                       VERY IMPORTANT:
+
+                       stopPropagation prevents the card itself
+                       from receiving this click.
+
+                       Therefore Book Now ONLY opens QR.
+                    */
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const service =
+                        button.dataset.service || "Web Service";
+
+                    const price =
+                        button.dataset.price || "";
+
+                    openQR(service, price);
+
+                });
+
+            });
+
+
+        /* CLOSE */
+
+        qrClose.addEventListener(
+            "click",
+            closeQR
+        );
+
+
+        /* CLICK OUTSIDE */
+
+        qrOverlay.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === qrOverlay) {
+                    closeQR();
+                }
+
+            }
+        );
+
+
+        /* ESCAPE */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    qrOverlay.classList.contains("active")
+                ) {
+                    closeQR();
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           QR ERROR CHECK
+           ===================================================== */
+
+        qrImage.addEventListener(
+            "error",
+            function () {
+
+                qrImage.style.display = "none";
+
+                qrError.style.display = "block";
+
+            }
+        );
+
+
+        qrImage.addEventListener(
+            "load",
+            function () {
+
+                qrImage.style.display = "block";
+
+                qrError.style.display = "none";
+
+            }
+        );
+
+
+        /* =====================================================
+           CATEGORY FILTER
+           ===================================================== */
+
+        const categoryButtons =
+            document.querySelectorAll(".category-button");
+
+        const serviceCards =
+            document.querySelectorAll(".service-card");
+
+
+        categoryButtons.forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    categoryButtons.forEach(function (item) {
+                        item.classList.remove("active");
+                    });
+
+                    button.classList.add("active");
+
+                    const category =
+                        button.dataset.category;
+
+                    serviceCards.forEach(function (card) {
+
+                        const categories =
+                            card.dataset.category.split(" ");
+
+                        if (
+                            category === "all" ||
+                            categories.includes(category)
+                        ) {
+
+                            card.style.display = "flex";
+
+                        } else {
+
+                            card.style.display = "none";
+
+                        }
+
+                    });
+
+                }
+            );
+
+        });
+
+    </script>
 
 </body>
 </html>
