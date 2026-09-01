@@ -1,7 +1,6 @@
 /* =========================================================
    SAKSHI MADGUNDI — WEB SERVICES
    COMPLETE STYLE.CSS
-   E-COMMERCE / SERVICE CATALOGUE UI
 ========================================================= */
 
 :root {
@@ -12,7 +11,7 @@
     --orange-dark: #df6800;
 
     --sky: #87ceeb;
-    --sky-dark: #4fa9cf;
+    --sky-dark: #5bb7dc;
 
     --bg: #ffffff;
     --surface: #ffffff;
@@ -20,32 +19,32 @@
 
     --text: #111111;
     --muted: #666666;
-    --border: #e7e7e7;
+    --border: #e8e8e8;
 
     --shadow:
-        0 8px 25px rgba(0, 0, 0, 0.06);
+        0 8px 30px rgba(0, 0, 0, 0.07);
 
-    --radius: 14px;
+    --radius: 16px;
 
     --header-height: 78px;
 }
 
 
 /* =========================================================
-   DARK MODE VARIABLES
+   DARK MODE
 ========================================================= */
 
 body.dark-mode {
     --bg: #090909;
     --surface: #111111;
-    --surface-2: #181818;
+    --surface-2: #171717;
 
     --text: #ffffff;
     --muted: #aaaaaa;
     --border: #292929;
 
     --shadow:
-        0 8px 30px rgba(0, 0, 0, 0.35);
+        0 8px 30px rgba(0, 0, 0, 0.40);
 }
 
 
@@ -66,13 +65,16 @@ html {
 body {
     min-height: 100vh;
 
-    background: var(--bg);
-    color: var(--text);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--text);
 
     transition:
         background-color 0.25s ease,
@@ -80,17 +82,24 @@ body {
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+    color:
+        inherit;
+
+    text-decoration:
+        none;
 }
 
 button {
-    font-family: inherit;
+    font-family:
+        inherit;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+    display:
+        block;
+
+    max-width:
+        100%;
 }
 
 
@@ -99,13 +108,20 @@ img {
 ========================================================= */
 
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position:
+        sticky;
 
-    width: 100%;
+    top:
+        0;
 
-    background: var(--surface);
+    z-index:
+        1000;
+
+    width:
+        100%;
+
+    background:
+        var(--surface);
 
     border-bottom:
         1px solid var(--border);
@@ -170,7 +186,7 @@ img {
 
 
 /* =========================================================
-   DESKTOP NAV
+   NAVIGATION
 ========================================================= */
 
 .desktop-nav {
@@ -266,6 +282,9 @@ img {
     height:
         42px;
 
+    padding:
+        0;
+
     border:
         1px solid var(--border);
 
@@ -281,9 +300,6 @@ img {
     cursor:
         pointer;
 
-    font-size:
-        20px;
-
     display:
         flex;
 
@@ -293,10 +309,18 @@ img {
     justify-content:
         center;
 
+    font-size:
+        20px;
+
+    appearance:
+        none;
+
+    -webkit-appearance:
+        none;
+
     transition:
         transform 0.2s ease,
-        background-color 0.2s ease,
-        border-color 0.2s ease;
+        background-color 0.2s ease;
 }
 
 .theme-button:hover,
@@ -305,9 +329,6 @@ img {
         translateY(-2px);
 
     background:
-        var(--yellow);
-
-    border-color:
         var(--yellow);
 }
 
@@ -335,6 +356,11 @@ img {
         var(--surface);
 }
 
+.mobile-menu.show {
+    display:
+        block;
+}
+
 .mobile-menu a {
     display:
         block;
@@ -355,11 +381,6 @@ img {
         700;
 }
 
-.mobile-menu.show {
-    display:
-        block;
-}
-
 
 /* =========================================================
    SHOP INTRO
@@ -373,13 +394,13 @@ img {
         0 auto;
 
     padding:
-        58px 0 30px;
+        65px 0 35px;
 }
 
 .shop-small-title,
 .section-label {
     margin-bottom:
-        10px;
+        12px;
 
     color:
         var(--orange);
@@ -399,16 +420,16 @@ img {
 
 .shop-top h1 {
     margin-bottom:
-        15px;
+        18px;
 
     color:
         var(--text);
 
     font-size:
-        clamp(38px, 5vw, 58px);
+        clamp(36px, 5vw, 60px);
 
     line-height:
-        1.05;
+        1;
 
     letter-spacing:
         -0.04em;
@@ -416,13 +437,13 @@ img {
 
 .shop-description {
     max-width:
-        650px;
+        620px;
 
     color:
         var(--muted);
 
     font-size:
-        16px;
+        17px;
 
     line-height:
         1.7;
@@ -430,7 +451,7 @@ img {
 
 
 /* =========================================================
-   SERVICES SECTION
+   SERVICES
 ========================================================= */
 
 .services-section {
@@ -441,7 +462,7 @@ img {
         0 auto;
 
     padding:
-        8px 0 75px;
+        10px 0 80px;
 }
 
 .services-toolbar {
@@ -455,7 +476,7 @@ img {
         space-between;
 
     margin-bottom:
-        20px;
+        24px;
 }
 
 .services-toolbar h2 {
@@ -463,10 +484,7 @@ img {
         var(--text);
 
     font-size:
-        25px;
-
-    font-weight:
-        800;
+        26px;
 }
 
 #serviceCount {
@@ -502,9 +520,6 @@ img {
     overflow:
         hidden;
 
-    min-width:
-        0;
-
     background:
         var(--surface);
 
@@ -525,13 +540,13 @@ img {
 
 .service-card:hover {
     transform:
-        translateY(-4px);
+        translateY(-5px);
 
     border-color:
-        rgba(255, 212, 0, 0.75);
+        rgba(255, 212, 0, 0.65);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.10);
+        0 16px 40px rgba(0, 0, 0, 0.11);
 }
 
 
@@ -544,7 +559,7 @@ img {
         100%;
 
     height:
-        190px;
+        205px;
 
     display:
         flex;
@@ -554,9 +569,6 @@ img {
 
     justify-content:
         center;
-
-    overflow:
-        hidden;
 
     border-bottom:
         1px solid var(--border);
@@ -579,10 +591,10 @@ img {
 
 .service-icon {
     width:
-        82px;
+        90px;
 
     height:
-        82px;
+        90px;
 
     display:
         flex;
@@ -603,10 +615,7 @@ img {
         #111111;
 
     font-size:
-        35px;
-
-    font-weight:
-        800;
+        42px;
 
     box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.12);
@@ -618,11 +627,8 @@ img {
 ========================================================= */
 
 .service-card-content {
-    min-height:
-        210px;
-
     padding:
-        20px;
+        22px;
 
     display:
         flex;
@@ -633,19 +639,19 @@ img {
 
 .service-category {
     margin-bottom:
-        8px;
+        9px;
 
     color:
         var(--orange);
 
     font-size:
-        10px;
+        11px;
 
     font-weight:
         800;
 
     letter-spacing:
-        0.14em;
+        0.12em;
 
     text-transform:
         uppercase;
@@ -653,13 +659,13 @@ img {
 
 .service-card h3 {
     margin-bottom:
-        8px;
+        11px;
 
     color:
         var(--text);
 
     font-size:
-        20px;
+        21px;
 
     line-height:
         1.25;
@@ -670,7 +676,7 @@ img {
 
 .service-short {
     min-height:
-        45px;
+        69px;
 
     color:
         var(--muted);
@@ -679,7 +685,7 @@ img {
         14px;
 
     line-height:
-        1.6;
+        1.65;
 }
 
 
@@ -688,11 +694,14 @@ img {
 ========================================================= */
 
 .service-bottom {
+    width:
+        100%;
+
     margin-top:
-        auto;
+        22px;
 
     padding-top:
-        16px;
+        17px;
 
     border-top:
         1px solid var(--border);
@@ -707,12 +716,17 @@ img {
         space-between;
 
     gap:
-        12px;
+        14px;
 }
 
+
+/* =========================================================
+   PRICE
+========================================================= */
+
 .service-bottom strong {
-    flex-shrink:
-        0;
+    flex:
+        0 0 auto;
 
     color:
         var(--text);
@@ -729,137 +743,23 @@ img {
 
 
 /* =========================================================
-   IMPORTANT:
-   CARD BUTTON CONTAINER
+   ALL CARD LINKS / BUTTONS
+   IMPORTANT FIX
 ========================================================= */
 
-.service-actions {
-    display:
-        flex;
+.service-bottom > a,
+.service-bottom > button {
+    flex:
+        0 0 auto;
 
-    align-items:
-        center;
-
-    justify-content:
-        flex-end;
-
-    gap:
-        8px;
-
-    flex-shrink:
-        0;
-}
-
-
-/* =========================================================
-   VIEW SERVICE BUTTON
-========================================================= */
-
-.view-service {
-    display:
-        inline-flex !important;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        auto;
-
-    min-width:
-        105px;
+    height:
+        40px;
 
     min-height:
         40px;
 
     padding:
-        0 14px;
-
-    border:
-        0;
-
-    border-radius:
-        8px;
-
-    background:
-        var(--yellow);
-
-    color:
-        #111111 !important;
-
-    font-size:
-        12px;
-
-    font-weight:
-        800;
-
-    line-height:
-        1;
-
-    white-space:
-        nowrap;
-
-    cursor:
-        pointer;
-
-    text-decoration:
-        none !important;
-
-    appearance:
-        none;
-
-    -webkit-appearance:
-        none;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.view-service:hover {
-    background:
-        var(--yellow-dark);
-
-    color:
-        #111111 !important;
-
-    transform:
-        translateY(-1px);
-}
-
-
-/* =========================================================
-   BOOK NOW BUTTON
-   THIS FIXES THE BROWSER-DEFAULT BUTTON
-========================================================= */
-
-.book-card-button,
-button.book-card-button {
-    display:
-        inline-flex !important;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        auto !important;
-
-    min-width:
-        88px;
-
-    min-height:
-        40px;
-
-    padding:
-        0 14px !important;
-
-    margin:
-        0 !important;
+        0 15px;
 
     border:
         0 !important;
@@ -868,13 +768,7 @@ button.book-card-button {
         8px !important;
 
     outline:
-        none;
-
-    background:
-        var(--orange) !important;
-
-    color:
-        #ffffff !important;
+        none !important;
 
     font-family:
         Arial,
@@ -888,13 +782,16 @@ button.book-card-button {
         800 !important;
 
     line-height:
-        1 !important;
+        40px;
 
     text-align:
         center;
 
     white-space:
         nowrap;
+
+    text-decoration:
+        none !important;
 
     cursor:
         pointer;
@@ -906,18 +803,54 @@ button.book-card-button {
         none !important;
 
     box-shadow:
-        none;
-
-    text-decoration:
         none !important;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
 }
 
-.book-card-button:hover,
-button.book-card-button:hover {
+
+/* =========================================================
+   VIEW SERVICE
+========================================================= */
+
+.service-bottom > a.view-service {
+    min-width:
+        120px;
+
+    background:
+        var(--yellow) !important;
+
+    color:
+        #111111 !important;
+}
+
+.service-bottom > a.view-service:hover {
+    background:
+        var(--yellow-dark) !important;
+
+    color:
+        #111111 !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   BOOK NOW
+   TARGETS THE REAL BUTTON EVEN WITHOUT A CLASS
+========================================================= */
+
+.service-bottom > button {
+    min-width:
+        90px;
+
+    background:
+        var(--orange) !important;
+
+    color:
+        #ffffff !important;
+}
+
+.service-bottom > button:hover {
     background:
         var(--orange-dark) !important;
 
@@ -928,12 +861,52 @@ button.book-card-button:hover {
         translateY(-1px);
 }
 
-.book-card-button:focus,
-.book-card-button:active {
+
+/* =========================================================
+   IF BOOK NOW IS AN <A> INSTEAD OF <BUTTON>
+========================================================= */
+
+.service-bottom > a:not(.view-service) {
+    min-width:
+        90px;
+
+    background:
+        var(--orange) !important;
+
+    color:
+        #ffffff !important;
+}
+
+.service-bottom > a:not(.view-service):hover {
+    background:
+        var(--orange-dark) !important;
+
+    color:
+        #ffffff !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   REMOVE BROWSER BUTTON STYLING
+========================================================= */
+
+.service-bottom button,
+.service-bottom button:hover,
+.service-bottom button:focus,
+.service-bottom button:active {
+    border:
+        0 !important;
+
     outline:
         none !important;
 
     box-shadow:
+        none !important;
+
+    text-decoration:
         none !important;
 }
 
@@ -944,7 +917,7 @@ button.book-card-button:hover {
 
 .simple-section {
     padding:
-        80px 20px;
+        85px 20px;
 
     border-top:
         1px solid var(--border);
@@ -960,7 +933,7 @@ button.book-card-button:hover {
 
 .simple-section h2 {
     margin-bottom:
-        17px;
+        18px;
 
     color:
         var(--text);
@@ -1001,11 +974,11 @@ button.book-card-button:hover {
     justify-content:
         center;
 
+    min-height:
+        46px;
+
     margin-top:
         24px;
-
-    min-height:
-        44px;
 
     padding:
         0 22px;
@@ -1030,6 +1003,12 @@ button.book-card-button:hover {
 
     cursor:
         pointer;
+
+    appearance:
+        none;
+
+    -webkit-appearance:
+        none;
 
     transition:
         background-color 0.2s ease,
@@ -1154,11 +1133,11 @@ button.book-card-button:hover {
     min-height:
         500px;
 
-    border-radius:
-        18px;
+    position:
+        sticky;
 
-    background:
-        var(--yellow);
+    top:
+        105px;
 
     display:
         flex;
@@ -1169,11 +1148,11 @@ button.book-card-button:hover {
     justify-content:
         center;
 
-    position:
-        sticky;
+    border-radius:
+        18px;
 
-    top:
-        105px;
+    background:
+        var(--yellow);
 }
 
 .large-service-icon {
@@ -1183,15 +1162,6 @@ button.book-card-button:hover {
     height:
         170px;
 
-    border-radius:
-        50%;
-
-    background:
-        #ffffff;
-
-    color:
-        #111111;
-
     display:
         flex;
 
@@ -1200,6 +1170,15 @@ button.book-card-button:hover {
 
     justify-content:
         center;
+
+    border-radius:
+        50%;
+
+    background:
+        #ffffff;
+
+    color:
+        #111111;
 
     font-size:
         65px;
@@ -1244,7 +1223,7 @@ button.book-card-button:hover {
 
 
 /* =========================================================
-   PRICE
+   PRICE BOX
 ========================================================= */
 
 .price-box {
@@ -1407,6 +1386,11 @@ button.book-card-button:hover {
         translateY(-2px);
 }
 
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
 .back-link {
     display:
         inline-block;
@@ -1447,9 +1431,6 @@ button.book-card-button:hover {
     padding:
         20px;
 
-    background:
-        rgba(0, 0, 0, 0.72);
-
     display:
         none;
 
@@ -1458,6 +1439,9 @@ button.book-card-button:hover {
 
     justify-content:
         center;
+
+    background:
+        rgba(0, 0, 0, 0.72);
 }
 
 .payment-overlay.open {
@@ -1513,6 +1497,9 @@ button.book-card-button:hover {
     height:
         40px;
 
+    padding:
+        0;
+
     border:
         0;
 
@@ -1530,6 +1517,12 @@ button.book-card-button:hover {
 
     font-size:
         26px;
+
+    appearance:
+        none;
+
+    -webkit-appearance:
+        none;
 }
 
 .close-payment:hover {
@@ -1543,9 +1536,6 @@ button.book-card-button:hover {
 .payment-box h2 {
     margin-bottom:
         12px;
-
-    color:
-        var(--text);
 
     font-size:
         28px;
@@ -1594,14 +1584,14 @@ button.book-card-button:hover {
 }
 
 .qr-image {
+    display:
+        block;
+
     width:
         100%;
 
     height:
         auto;
-
-    display:
-        block;
 }
 
 .payment-note {
@@ -1624,6 +1614,9 @@ button.book-card-button:hover {
     width:
         100%;
 
+    padding:
+        45px 20px 20px;
+
     background:
         var(--sky);
 
@@ -1632,9 +1625,6 @@ button.book-card-button:hover {
 
     border-top:
         1px solid rgba(8, 56, 74, 0.15);
-
-    padding:
-        45px 20px 20px;
 }
 
 .footer-inner {
@@ -1654,7 +1644,7 @@ button.book-card-button:hover {
         space-between;
 
     gap:
-        35px;
+        30px;
 }
 
 .footer-inner strong {
@@ -1827,16 +1817,6 @@ button.book-card-button:hover {
             55px;
     }
 
-    .services-toolbar {
-        margin-bottom:
-            16px;
-    }
-
-    .services-toolbar h2 {
-        font-size:
-            23px;
-    }
-
     .services-grid {
         grid-template-columns:
             1fr;
@@ -1854,9 +1834,6 @@ button.book-card-button:hover {
     }
 
     .service-card-content {
-        min-height:
-            205px;
-
         padding:
             18px;
     }
@@ -1872,60 +1849,54 @@ button.book-card-button:hover {
     }
 
 
-    /* CARD ACTIONS */
+    /* CARD BOTTOM */
 
     .service-bottom {
-        align-items:
-            center;
-
         flex-direction:
             row;
 
-        gap:
-            10px;
-    }
-
-    .service-actions {
-        width:
-            auto;
-
-        flex:
-            1;
+        align-items:
+            center;
 
         justify-content:
-            flex-end;
+            space-between;
 
         gap:
-            7px;
+            8px;
     }
 
-    .view-service {
-        min-width:
-            100px;
-
-        min-height:
-            39px;
-
-        padding:
-            0 11px;
-
+    .service-bottom strong {
         font-size:
-            11px;
+            15px;
     }
 
-    .book-card-button,
-    button.book-card-button {
-        min-width:
-            82px;
+    .service-bottom > a,
+    .service-bottom > button {
+        height:
+            40px;
 
         min-height:
-            39px;
+            40px;
 
         padding:
-            0 11px !important;
+            0 10px;
 
         font-size:
             11px !important;
+
+        line-height:
+            40px;
+    }
+
+    .service-bottom > a.view-service {
+        min-width:
+            100px;
+    }
+
+    .service-bottom > button,
+    .service-bottom > a:not(.view-service) {
+        min-width:
+            82px;
     }
 
 
@@ -1934,11 +1905,6 @@ button.book-card-button:hover {
     .simple-section {
         padding:
             55px 14px;
-    }
-
-    .simple-section h2 {
-        font-size:
-            30px;
     }
 
 
@@ -2042,32 +2008,32 @@ button.book-card-button:hover {
     }
 
     .service-bottom {
-        align-items:
-            stretch;
-
-        flex-direction:
-            column;
-    }
-
-    .service-actions {
-        width:
-            100%;
-
         display:
             grid;
 
         grid-template-columns:
-            1fr 1fr;
+            auto 1fr 1fr;
+
+        align-items:
+            center;
+
+        gap:
+            7px;
     }
 
-    .view-service,
-    .book-card-button,
-    button.book-card-button {
+    .service-bottom > a,
+    .service-bottom > button {
         width:
-            100% !important;
+            100%;
 
         min-width:
-            0;
+            0 !important;
+
+        padding:
+            0 7px;
+
+        font-size:
+            10px !important;
     }
 
     .payment-box h2 {
