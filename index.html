@@ -2,1611 +2,469 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Sakshi Madgundi — Web Services</title>
+    <title>Sakshi Madgundi | Web Services</title>
 
     <meta
         name="description"
-        content="Web design, WordPress, WooCommerce and website services by Sakshi Madgundi."
+        content="Web design and development services by Sakshi Madgundi."
     >
 
-    <style>
-
-        /* =========================================================
-           SAKSHI MADGUNDI
-           SERVICE STORE
-           ========================================================= */
-
-        :root {
-
-            --yellow: #ffd21f;
-            --yellow-soft: #fff5a8;
-
-            --orange: #ff9f1c;
-            --orange-dark: #ef7900;
-
-            --bg: #ffffff;
-            --surface: #ffffff;
-            --surface-soft: #f7f7f7;
-
-            --text: #111111;
-            --muted: #666666;
-
-            --border: #e8e8e8;
-
-            --shadow:
-                0 10px 35px rgba(0, 0, 0, 0.08);
-
-            --header-height: 72px;
-
-        }
-
-
-        /* =========================================================
-           DARK MODE
-           ========================================================= */
-
-        body.dark {
-
-            --bg: #080808;
-            --surface: #111111;
-            --surface-soft: #181818;
-
-            --text: #ffffff;
-            --muted: #aaaaaa;
-
-            --border: #292929;
-
-            --shadow:
-                0 12px 40px rgba(0, 0, 0, 0.4);
-
-        }
-
-
-        /* =========================================================
-           RESET
-           ========================================================= */
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-
-        body {
-
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Arial,
-                sans-serif;
-
-            background: var(--bg);
-            color: var(--text);
-
-            min-height: 100vh;
-
-            transition:
-                background .25s ease,
-                color .25s ease;
-
-        }
-
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        button {
-            font: inherit;
-            cursor: pointer;
-        }
-
-
-        /* =========================================================
-           HEADER
-           ========================================================= */
-
-        .header {
-
-            position: sticky;
-            top: 0;
-
-            z-index: 1000;
-
-            height: var(--header-height);
-
-            background: var(--surface);
-
-            border-bottom:
-                1px solid var(--border);
-
-        }
-
-
-        .header-inner {
-
-            width:
-                min(
-                    1180px,
-                    calc(100% - 32px)
-                );
-
-            height: 100%;
-
-            margin: auto;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 25px;
-
-        }
-
-
-        /* LOGO */
-
-        .logo {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            font-size: 19px;
-
-            font-weight: 800;
-
-            white-space: nowrap;
-
-        }
-
-
-        .logo-box {
-
-            width: 38px;
-            height: 38px;
-
-            display: grid;
-
-            place-items: center;
-
-            background: var(--yellow);
-
-            color: #111;
-
-            border-radius: 11px;
-
-            font-weight: 900;
-
-        }
-
-
-        .logo-name span {
-            color: var(--orange-dark);
-        }
-
-
-        /* NAVIGATION */
-
-        .nav {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 4px;
-
-        }
-
-
-        .nav a {
-
-            padding:
-                10px 13px;
-
-            border-radius: 10px;
-
-            color: var(--muted);
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            transition: .2s ease;
-
-        }
-
-
-        .nav a:hover {
-
-            background:
-                var(--surface-soft);
-
-            color:
-                var(--text);
-
-        }
-
-
-        /* HEADER ACTIONS */
-
-        .header-actions {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-        }
-
-
-        .icon-button {
-
-            width: 42px;
-            height: 42px;
-
-            display: grid;
-
-            place-items: center;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 12px;
-
-            background:
-                var(--surface);
-
-            color:
-                var(--text);
-
-            font-size: 18px;
-
-        }
-
-
-        .icon-button:hover {
-
-            background:
-                var(--yellow);
-
-            color:
-                #111;
-
-            border-color:
-                var(--yellow);
-
-        }
-
-
-        .mobile-menu-button {
-            display: none;
-        }
-
-
-        /* =========================================================
-           MOBILE MENU
-           ========================================================= */
-
-        .mobile-menu {
-
-            position: fixed;
-
-            top: var(--header-height);
-
-            left: 0;
-            right: 0;
-
-            z-index: 999;
-
-            display: none;
-
-            background:
-                var(--surface);
-
-            border-bottom:
-                1px solid var(--border);
-
-            box-shadow:
-                var(--shadow);
-
-        }
-
-
-        .mobile-menu.open {
-            display: block;
-        }
-
-
-        .mobile-menu-inner {
-
-            width:
-                min(
-                    1180px,
-                    calc(100% - 32px)
-                );
-
-            margin: auto;
-
-            padding:
-                10px 0 18px;
-
-        }
-
-
-        .mobile-menu a {
-
-            display: block;
-
-            padding: 14px 4px;
-
-            border-bottom:
-                1px solid var(--border);
-
-            font-weight: 600;
-
-        }
-
-
-        /* =========================================================
-           SHOP AREA
-           ========================================================= */
-
-        .shop {
-
-            width:
-                min(
-                    1180px,
-                    calc(100% - 32px)
-                );
-
-            margin: auto;
-
-            padding:
-                42px 0 70px;
-
-        }
-
-
-        .shop-heading {
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                flex-end;
-
-            gap: 25px;
-
-            margin-bottom:
-                28px;
-
-        }
-
-
-        .heading-left {
-            max-width: 700px;
-        }
-
-
-        .small-label {
-
-            display: inline-block;
-
-            margin-bottom: 11px;
-
-            padding:
-                7px 12px;
-
-            border-radius: 999px;
-
-            background:
-                var(--yellow-soft);
-
-            color:
-                #111;
-
-            font-size: 11px;
-
-            font-weight: 900;
-
-            letter-spacing:
-                .6px;
-
-        }
-
-
-        body.dark .small-label {
-
-            background:
-                #3b3200;
-
-            color:
-                #ffe45a;
-
-        }
-
-
-        .shop-heading h1 {
-
-            font-size:
-                clamp(
-                    34px,
-                    5vw,
-                    52px
-                );
-
-            line-height:
-                1.05;
-
-            letter-spacing:
-                -1.8px;
-
-            margin-bottom:
-                13px;
-
-        }
-
-
-        .shop-heading h1 span {
-            color: var(--orange);
-        }
-
-
-        .heading-description {
-
-            color:
-                var(--muted);
-
-            font-size:
-                15px;
-
-            line-height:
-                1.7;
-
-        }
-
-
-        .seller {
-
-            flex-shrink: 0;
-
-            padding:
-                13px 16px;
-
-            background:
-                var(--surface-soft);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                13px;
-
-            color:
-                var(--muted);
-
-            font-size:
-                12px;
-
-        }
-
-
-        .seller strong {
-            color: var(--text);
-        }
-
-
-        /* =========================================================
-           CATEGORIES
-           ========================================================= */
-
-        .categories {
-
-            display: flex;
-
-            gap: 9px;
-
-            overflow-x: auto;
-
-            scrollbar-width: none;
-
-            margin-bottom:
-                24px;
-
-        }
-
-
-        .categories::-webkit-scrollbar {
-            display: none;
-        }
-
-
-        .category {
-
-            flex-shrink: 0;
-
-            padding:
-                10px 16px;
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                999px;
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
-
-            font-weight:
-                700;
-
-        }
-
-
-        .category.active,
-        .category:hover {
-
-            background:
-                var(--yellow);
-
-            color:
-                #111;
-
-            border-color:
-                var(--yellow);
-
-        }
-
-
-        /* =========================================================
-           SERVICE GRID
-           ========================================================= */
-
-        .services {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    3,
-                    minmax(0, 1fr)
-                );
-
-            gap: 20px;
-
-        }
-
-
-        /* =========================================================
-           SERVICE CARD
-           ========================================================= */
-
-        .service-card {
-
-            display: flex;
-
-            flex-direction: column;
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                18px;
-
-            overflow:
-                hidden;
-
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease,
-                border-color .2s ease;
-
-        }
-
-
-        .service-card:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                var(--shadow);
-
-            border-color:
-                var(--yellow);
-
-        }
-
-
-        /* =========================================================
-           SERVICE IMAGE
-           ========================================================= */
-
-        .service-image {
-
-            height: 210px;
-
-            overflow:
-                hidden;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--yellow),
-                    var(--orange)
-                );
-
-        }
-
-
-        .service-image img {
-
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            transition:
-                transform .3s ease;
-
-        }
-
-
-        .service-card:hover
-        .service-image img {
-
-            transform:
-                scale(1.04);
-
-        }
-
-
-        /* If you don't have an image yet */
-
-        .image-placeholder {
-
-            width: 100%;
-            height: 100%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--yellow),
-                    var(--orange)
-                );
-
-            color: #111;
-
-            font-size: 32px;
-
-            font-weight: 900;
-
-        }
-
-
-        /* =========================================================
-           CARD CONTENT
-           ========================================================= */
-
-        .card-content {
-
-            padding:
-                18px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            flex: 1;
-
-        }
-
-
-        .service-category {
-
-            color:
-                var(--orange-dark);
-
-            font-size:
-                10px;
-
-            font-weight:
-                900;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                .7px;
-
-            margin-bottom:
-                7px;
-
-        }
-
-
-        .service-title {
-
-            font-size:
-                19px;
-
-            line-height:
-                1.3;
-
-            margin-bottom:
-                8px;
-
-        }
-
-
-        .service-text {
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
-
-            line-height:
-                1.6;
-
-            margin-bottom:
-                17px;
-
-        }
-
-
-        .features {
-
-            list-style:
-                none;
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            gap:
-                7px;
-
-            margin-bottom:
-                20px;
-
-        }
-
-
-        .features li {
-
-            color:
-                var(--muted);
-
-            font-size:
-                12px;
-
-        }
-
-
-        .features li::before {
-
-            content:
-                "✓";
-
-            color:
-                var(--orange-dark);
-
-            font-weight:
-                900;
-
-            margin-right:
-                7px;
-
-        }
-
-
-        /* =========================================================
-           CARD BOTTOM
-           ========================================================= */
-
-        .card-bottom {
-
-            margin-top:
-                auto;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap:
-                10px;
-
-        }
-
-
-        .price-label {
-
-            display:
-                block;
-
-            color:
-                var(--muted);
-
-            font-size:
-                10px;
-
-            margin-bottom:
-                2px;
-
-        }
-
-
-        .price {
-
-            font-size:
-                17px;
-
-            font-weight:
-                900;
-
-        }
-
-
-        .card-buttons {
-
-            display:
-                flex;
-
-            gap:
-                7px;
-
-        }
-
-
-        /* VIEW SERVICE */
-
-        .view-button {
-
-            padding:
-                10px 13px;
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                10px;
-
-            background:
-                var(--surface);
-
-            color:
-                var(--text);
-
-            font-size:
-                12px;
-
-            font-weight:
-                800;
-
-            white-space:
-                nowrap;
-
-        }
-
-
-        .view-button:hover {
-
-            background:
-                var(--surface-soft);
-
-            border-color:
-                var(--text);
-
-        }
-
-
-        /* BOOK NOW */
-
-        .book-button {
-
-            padding:
-                10px 14px;
-
-            border:
-                0;
-
-            border-radius:
-                10px;
-
-            background:
-                var(--yellow);
-
-            color:
-                #111;
-
-            font-size:
-                12px;
-
-            font-weight:
-                900;
-
-            white-space:
-                nowrap;
-
-        }
-
-
-        .book-button:hover {
-            background:
-                var(--orange);
-        }
-
-
-        /* =========================================================
-           QR MODAL
-           ========================================================= */
-
-        .qr-overlay {
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 5000;
-
-            display: none;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            padding:
-                20px;
-
-            background:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .72
-                );
-
-            backdrop-filter:
-                blur(5px);
-
-        }
-
-
-        .qr-overlay.open {
-            display: flex;
-        }
-
-
-        .qr-modal {
-
-            width:
-                min(
-                    420px,
-                    100%
-                );
-
-            max-height:
-                calc(
-                    100vh - 40px
-                );
-
-            overflow-y:
-                auto;
-
-            padding:
-                22px;
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                22px;
-
-            text-align:
-                center;
-
-            box-shadow:
-                0 25px 70px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .4
-                );
-
-        }
-
-
-        .qr-close {
-
-            width:
-                36px;
-
-            height:
-                36px;
-
-            margin-left:
-                auto;
-
-            margin-bottom:
-                5px;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-            border:
-                0;
-
-            border-radius:
-                50%;
-
-            background:
-                var(--surface-soft);
-
-            color:
-                var(--text);
-
-            font-size:
-                21px;
-
-        }
-
-
-        .qr-close:hover {
-
-            background:
-                var(--yellow);
-
-            color:
-                #111;
-
-        }
-
-
-        .qr-modal h2 {
-
-            font-size:
-                23px;
-
-            margin-bottom:
-                7px;
-
-        }
-
-
-        .qr-subtitle {
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
-
-            line-height:
-                1.5;
-
-            margin-bottom:
-                15px;
-
-        }
-
-
-        .selected-service {
-
-            display:
-                inline-block;
-
-            padding:
-                7px 11px;
-
-            margin-bottom:
-                15px;
-
-            background:
-                var(--yellow-soft);
-
-            color:
-                #111;
-
-            border-radius:
-                8px;
-
-            font-size:
-                12px;
-
-            font-weight:
-                800;
-
-        }
-
-
-        body.dark .selected-service {
-
-            background:
-                #3b3200;
-
-            color:
-                #ffe45a;
-
-        }
-
-
-        .qr-box {
-
-            width:
-                270px;
-
-            height:
-                270px;
-
-            margin:
-                0 auto 17px;
-
-            padding:
-                5px;
-
-            background:
-                #ffffff;
-
-            border:
-                4px solid
-                var(--yellow);
-
-            border-radius:
-                15px;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-        }
-
-
-        .qr-box img {
-
-            width:
-                100%;
-
-            height:
-                100%;
-
-            object-fit:
-                contain;
-
-            display:
-                block;
-
-        }
-
-
-        .qr-error {
-
-            display:
-                none;
-
-            padding:
-                15px;
-
-            color:
-                #b00020;
-
-            font-size:
-                12px;
-
-            line-height:
-                1.5;
-
-        }
-
-
-        .qr-instruction {
-
-            color:
-                var(--muted);
-
-            font-size:
-                12px;
-
-            line-height:
-                1.5;
-
-            margin-bottom:
-                13px;
-
-        }
-
-
-        .payment-note {
-
-            padding:
-                11px;
-
-            border-radius:
-                10px;
-
-            background:
-                var(--surface-soft);
-
-            color:
-                var(--muted);
-
-            font-size:
-                11px;
-
-            line-height:
-                1.5;
-
-        }
-
-
-        /* =========================================================
-           FOOTER
-           ========================================================= */
-
-        footer {
-
-            border-top:
-                1px solid var(--border);
-
-            padding:
-                25px 0;
-
-            background:
-                var(--surface);
-
-        }
-
-
-        .footer-inner {
-
-            width:
-                min(
-                    1180px,
-                    calc(100% - 32px)
-                );
-
-            margin:
-                auto;
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
-
-            gap:
-                20px;
-
-        }
-
-
-        .footer-name {
-            font-weight: 800;
-        }
-
-
-        .footer-muted {
-
-            color:
-                var(--muted);
-
-            font-size:
-                12px;
-
-        }
-
-
-        /* =========================================================
-           RESPONSIVE
-           ========================================================= */
-
-        @media (max-width: 950px) {
-
-            .nav {
-                display: none;
-            }
-
-            .mobile-menu-button {
-                display: grid;
-            }
-
-            .services {
-
-                grid-template-columns:
-                    repeat(
-                        2,
-                        minmax(0, 1fr)
-                    );
-
-            }
-
-        }
-
-
-        @media (max-width: 620px) {
-
-            :root {
-                --header-height: 64px;
-            }
-
-            .header-inner {
-
-                width:
-                    calc(
-                        100% - 22px
-                    );
-
-            }
-
-            .logo {
-
-                font-size:
-                    16px;
-
-            }
-
-            .logo-box {
-
-                width:
-                    34px;
-
-                height:
-                    34px;
-
-            }
-
-            .icon-button {
-
-                width:
-                    38px;
-
-                height:
-                    38px;
-
-            }
-
-            .shop {
-
-                width:
-                    calc(
-                        100% - 22px
-                    );
-
-                padding-top:
-                    30px;
-
-            }
-
-            .shop-heading {
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    flex-start;
-
-            }
-
-            .seller {
-                width: 100%;
-            }
-
-            .services {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    15px;
-
-            }
-
-            .service-image {
-
-                height:
-                    200px;
-
-            }
-
-            .card-bottom {
-
-                align-items:
-                    flex-end;
-
-            }
-
-            .card-buttons {
-
-                flex-direction:
-                    column;
-
-            }
-
-            .view-button,
-            .book-button {
-
-                width:
-                    100%;
-
-                text-align:
-                    center;
-
-            }
-
-            .qr-box {
-
-                width:
-                    min(
-                        270px,
-                        76vw
-                    );
-
-                height:
-                    min(
-                        270px,
-                        76vw
-                    );
-
-            }
-
-            .footer-inner {
-
-                width:
-                    calc(
-                        100% - 22px
-                    );
-
-                flex-direction:
-                    column;
-
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-    <!-- =========================================================
-         HEADER
-         ========================================================= -->
+<header class="site-header">
 
-    <header class="header">
+    <div class="header-inner">
 
-        <div class="header-inner">
+        <a href="index.html" class="brand">
 
-            <a
-                href="index.html"
-                class="logo"
+            <img
+                src="logo.png"
+                alt="Web Services Since 2026"
+                class="brand-logo"
             >
 
-                <span class="logo-box">
-                    S
-                </span>
+        </a>
 
-                <span class="logo-name">
-                    Sakshi
-                    <span>Madgundi</span>
-                </span>
 
+        <nav class="desktop-nav">
+
+            <a href="index.html" class="nav-link active">
+                Services
             </a>
 
+            <a href="#about" class="nav-link">
+                About
+            </a>
 
-            <nav class="nav">
+            <a href="#contact" class="nav-link">
+                Contact
+            </a>
 
-                <a href="index.html">
-                    Services
-                </a>
-
-                <a href="#about">
-                    About
-                </a>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
-            </nav>
+        </nav>
 
 
-            <div class="header-actions">
+        <div class="header-actions">
 
-                <button
-                    class="icon-button"
-                    id="themeButton"
-                    type="button"
-                    aria-label="Toggle theme"
-                >
-                    ☀
-                </button>
+            <button
+                class="theme-button"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+            >
+                ☼
+            </button>
 
-                <button
-                    class="icon-button mobile-menu-button"
-                    id="menuButton"
-                    type="button"
-                    aria-label="Open menu"
-                >
-                    ☰
-                </button>
-
-            </div>
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
 
         </div>
 
-    </header>
+    </div>
 
 
     <!-- MOBILE MENU -->
 
-    <div
-        class="mobile-menu"
-        id="mobileMenu"
-    >
+    <div class="mobile-menu" id="mobileMenu">
 
-        <div class="mobile-menu-inner">
+        <a href="index.html">
+            Services
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     SHOP HEADER
+========================================================= -->
+
+<main>
+
+<section class="shop-top">
+
+    <div>
+
+        <p class="shop-small-title">
+            SAKSHI MADGUNDI
+        </p>
+
+        <h1>
+            Web Services
+        </h1>
+
+        <p class="shop-description">
+            Choose the web service you need and view exactly
+            what is included before booking.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICE SHOP
+========================================================= -->
+
+<section class="services-section">
+
+    <div class="services-toolbar">
+
+        <h2>
+            Services
+        </h2>
+
+        <span id="serviceCount">
+            5 services
+        </span>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <!-- SERVICE 1 -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-yellow">
+                <span class="service-icon">
+                    ✦
+                </span>
+            </div>
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    WEBSITE FIX
+                </p>
+
+                <h3>
+                    WordPress Issue Fix
+                </h3>
+
+                <p class="service-short">
+                    Fix a specific WordPress website issue,
+                    layout problem or functionality problem.
+                </p>
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹799 – ₹5,999
+                    </strong>
+
+                    <a
+                        href="service.html?service=wordpress-fix"
+                        class="view-service"
+                    >
+                        View Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 2 -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-orange">
+                <span class="service-icon">
+                    🛒
+                </span>
+            </div>
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    WOOCOMMERCE
+                </p>
+
+                <h3>
+                    WooCommerce Fix
+                </h3>
+
+                <p class="service-short">
+                    Fix cart, product, checkout and other
+                    WooCommerce website issues.
+                </p>
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹799 – ₹5,999
+                    </strong>
+
+                    <a
+                        href="service.html?service=woocommerce-fix"
+                        class="view-service"
+                    >
+                        View Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 3 -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-yellow">
+                <span class="service-icon">
+                    ☰
+                </span>
+            </div>
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    RESPONSIVE DESIGN
+                </p>
+
+                <h3>
+                    Header / Menu Responsive Fix
+                </h3>
+
+                <p class="service-short">
+                    Make your website header, navigation and
+                    menus work properly on mobile and desktop.
+                </p>
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹799 – ₹5,999
+                    </strong>
+
+                    <a
+                        href="service.html?service=responsive-fix"
+                        class="view-service"
+                    >
+                        View Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 4 -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-orange">
+                <span class="service-icon">
+                    ◇
+                </span>
+            </div>
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    CUSTOM WEB PAGE
+                </p>
+
+                <h3>
+                    Landing / Product Page
+                </h3>
+
+                <p class="service-short">
+                    A custom hand-coded webpage designed around
+                    your requirements.
+                </p>
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹1,500 – ₹3,000
+                    </strong>
+
+                    <a
+                        href="service.html?service=custom-page"
+                        class="view-service"
+                    >
+                        View Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SERVICE 5 -->
+
+        <article class="service-card">
+
+            <div class="service-image service-image-yellow">
+                <span class="service-icon">
+                    ✚
+                </span>
+            </div>
+
+            <div class="service-card-content">
+
+                <p class="service-category">
+                    COMPLETE WEBSITE
+                </p>
+
+                <h3>
+                    E-Commerce Website
+                </h3>
+
+                <p class="service-short">
+                    A complete basic e-commerce website with
+                    essential pages and features.
+                </p>
+
+                <div class="service-bottom">
+
+                    <strong>
+                        ₹6,666 – ₹9,999
+                    </strong>
+
+                    <a
+                        href="service.html?service=ecommerce"
+                        class="view-service"
+                    >
+                        View Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="simple-section" id="about">
+
+    <div class="simple-section-inner">
+
+        <p class="section-label">
+            ABOUT
+        </p>
+
+        <h2>
+            Web services by Sakshi Madgundi
+        </h2>
+
+        <p>
+            I provide practical website design, development,
+            fixing and customization services for individuals,
+            creators and small businesses.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="simple-section contact-section" id="contact">
+
+    <div class="simple-section-inner">
+
+        <p class="section-label">
+            NEED SOMETHING CUSTOM?
+        </p>
+
+        <h2>
+            Let's build it.
+        </h2>
+
+        <p>
+            If your requirement does not exactly match one of
+            the listed services, contact Sakshi to discuss it.
+        </p>
+
+        <a
+            href="mailto:your-email@example.com"
+            class="primary-button"
+        >
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div>
+
+            <strong>
+                Sakshi Madgundi
+            </strong>
+
+            <p>
+                Web Services · Since 2026
+            </p>
+
+        </div>
+
+        <div class="footer-links">
 
             <a href="index.html">
                 Services
@@ -1625,1214 +483,16 @@
     </div>
 
 
-    <!-- =========================================================
-         SHOP
-         ========================================================= -->
+    <div class="footer-bottom">
 
-    <main class="shop">
-
-
-        <div class="shop-heading">
-
-            <div class="heading-left">
-
-                <div class="small-label">
-                    SERVICES BY SAKSHI
-                </div>
-
-                <h1>
-                    Choose what you
-                    <span>need.</span>
-                </h1>
-
-                <p class="heading-description">
-                    Website, WordPress, WooCommerce and web
-                    development services. View a service to see
-                    exactly what's included, or book it directly.
-                </p>
-
-            </div>
-
-
-            <div class="seller">
-
-                Services provided by
-                <strong>Sakshi Madgundi</strong>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================================
-             CATEGORY FILTER
-             ===================================================== -->
-
-        <div class="categories">
-
-            <button
-                class="category active"
-                data-category="all"
-                type="button"
-            >
-                All
-            </button>
-
-            <button
-                class="category"
-                data-category="wordpress"
-                type="button"
-            >
-                WordPress
-            </button>
-
-            <button
-                class="category"
-                data-category="website"
-                type="button"
-            >
-                Websites
-            </button>
-
-            <button
-                class="category"
-                data-category="woocommerce"
-                type="button"
-            >
-                WooCommerce
-            </button>
-
-            <button
-                class="category"
-                data-category="design"
-                type="button"
-            >
-                Design
-            </button>
-
-        </div>
-
-
-        <!-- =====================================================
-             SERVICE PRODUCTS
-             ===================================================== -->
-
-        <section class="services">
-
-
-            <!-- =================================================
-                 1. WORDPRESS ISSUE FIX
-                 ================================================= -->
-
-            <article
-                class="service-card"
-                data-category="wordpress woocommerce"
-            >
-
-                <a
-                    href="service.html?service=wordpress-fix"
-                    class="service-image"
-                    aria-label="View WordPress Issue Fix"
-                >
-
-                    <div class="image-placeholder">
-                        WP
-                    </div>
-
-                </a>
-
-
-                <div class="card-content">
-
-                    <div class="service-category">
-                        WordPress
-                    </div>
-
-                    <h2 class="service-title">
-                        WordPress Issue Fix
-                    </h2>
-
-                    <p class="service-text">
-                        Fix a specific WordPress or WooCommerce
-                        issue on your existing website.
-                    </p>
-
-
-                    <ul class="features">
-
-                        <li>
-                            One specific issue
-                        </li>
-
-                        <li>
-                            Theme or plugin issue
-                        </li>
-
-                        <li>
-                            Basic troubleshooting
-                        </li>
-
-                    </ul>
-
-
-                    <div class="card-bottom">
-
-                        <div>
-
-                            <span class="price-label">
-                                Starting from
-                            </span>
-
-                            <div class="price">
-                                ₹199 – ₹599
-                            </div>
-
-                        </div>
-
-
-                        <div class="card-buttons">
-
-                            <a
-                                href="service.html?service=wordpress-fix"
-                                class="view-button"
-                            >
-                                View Service
-                            </a>
-
-                            <button
-                                type="button"
-                                class="book-button"
-                                data-service="WordPress Issue Fix"
-                                data-price="₹199 – ₹599"
-                            >
-                                Book Now
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 2. HEADER / MENU
-                 ================================================= -->
-
-            <article
-                class="service-card"
-                data-category="wordpress"
-            >
-
-                <a
-                    href="service.html?service=header-menu"
-                    class="service-image"
-                >
-
-                    <div class="image-placeholder">
-                        ☰
-                    </div>
-
-                </a>
-
-
-                <div class="card-content">
-
-                    <div class="service-category">
-                        WordPress
-                    </div>
-
-                    <h2 class="service-title">
-                        Header / Menu Fix
-                    </h2>
-
-                    <p class="service-text">
-                        Fix navigation, header, mobile menu,
-                        spacing and responsive layout problems.
-                    </p>
-
-
-                    <ul class="features">
-
-                        <li>
-                            Desktop navigation
-                        </li>
-
-                        <li>
-                            Mobile menu
-                        </li>
-
-                        <li>
-                            Responsive adjustments
-                        </li>
-
-                    </ul>
-
-
-                    <div class="card-bottom">
-
-                        <div>
-
-                            <span class="price-label">
-                                Starting from
-                            </span>
-
-                            <div class="price">
-                                ₹199 – ₹599
-                            </div>
-
-                        </div>
-
-
-                        <div class="card-buttons">
-
-                            <a
-                                href="service.html?service=header-menu"
-                                class="view-button"
-                            >
-                                View Service
-                            </a>
-
-                            <button
-                                type="button"
-                                class="book-button"
-                                data-service="Header / Menu Fix"
-                                data-price="₹199 – ₹599"
-                            >
-                                Book Now
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 3. DESIGN TO WEBSITE
-                 ================================================= -->
-
-            <article
-                class="service-card"
-                data-category="design website"
-            >
-
-                <a
-                    href="service.html?service=design-to-website"
-                    class="service-image"
-                >
-
-                    <div class="image-placeholder">
-                        ✦
-                    </div>
-
-                </a>
-
-
-                <div class="card-content">
-
-                    <div class="service-category">
-                        Web Design
-                    </div>
-
-                    <h2 class="service-title">
-                        Design → Website
-                    </h2>
-
-                    <p class="service-text">
-                        Turn an existing design into a responsive
-                        working website.
-                    </p>
-
-
-                    <ul class="features">
-
-                        <li>
-                            HTML / CSS implementation
-                        </li>
-
-                        <li>
-                            Responsive layout
-                        </li>
-
-                        <li>
-                            Design matching
-                        </li>
-
-                    </ul>
-
-
-                    <div class="card-bottom">
-
-                        <div>
-
-                            <span class="price-label">
-                                Starting from
-                            </span>
-
-                            <div class="price">
-                                ₹1,500 – ₹3,000
-                            </div>
-
-                        </div>
-
-
-                        <div class="card-buttons">
-
-                            <a
-                                href="service.html?service=design-to-website"
-                                class="view-button"
-                            >
-                                View Service
-                            </a>
-
-                            <button
-                                type="button"
-                                class="book-button"
-                                data-service="Design to Website"
-                                data-price="₹1,500 – ₹3,000"
-                            >
-                                Book Now
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 4. COMPLETE WEBSITE
-                 ================================================= -->
-
-            <article
-                class="service-card"
-                data-category="website"
-            >
-
-                <a
-                    href="service.html?service=complete-website"
-                    class="service-image"
-                >
-
-                    <div class="image-placeholder">
-                        WEB
-                    </div>
-
-                </a>
-
-
-                <div class="card-content">
-
-                    <div class="service-category">
-                        Website
-                    </div>
-
-                    <h2 class="service-title">
-                        Complete Website
-                    </h2>
-
-                    <p class="service-text">
-                        A complete basic website built according
-                        to the client's requirements.
-                    </p>
-
-
-                    <ul class="features">
-
-                        <li>
-                            Multiple sections/pages
-                        </li>
-
-                        <li>
-                            Responsive design
-                        </li>
-
-                        <li>
-                            Basic functionality
-                        </li>
-
-                    </ul>
-
-
-                    <div class="card-bottom">
-
-                        <div>
-
-                            <span class="price-label">
-                                Starting from
-                            </span>
-
-                            <div class="price">
-                                ₹6,666 – ₹9,999
-                            </div>
-
-                        </div>
-
-
-                        <div class="card-buttons">
-
-                            <a
-                                href="service.html?service=complete-website"
-                                class="view-button"
-                            >
-                                View Service
-                            </a>
-
-                            <button
-                                type="button"
-                                class="book-button"
-                                data-service="Complete Website"
-                                data-price="₹6,666 – ₹9,999"
-                            >
-                                Book Now
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 5. WOOCOMMERCE
-                 ================================================= -->
-
-            <article
-                class="service-card"
-                data-category="woocommerce wordpress"
-            >
-
-                <a
-                    href="service.html?service=woocommerce"
-                    class="service-image"
-                >
-
-                    <div class="image-placeholder">
-                        🛒
-                    </div>
-
-                </a>
-
-
-                <div class="card-content">
-
-                    <div class="service-category">
-                        WooCommerce
-                    </div>
-
-                    <h2 class="service-title">
-                        WooCommerce Setup / Fix
-                    </h2>
-
-                    <p class="service-text">
-                        Product, cart, checkout and basic
-                        WooCommerce setup or fixes.
-                    </p>
-
-
-                    <ul class="features">
-
-                        <li>
-                            Product setup
-                        </li>
-
-                        <li>
-                            Cart fixes
-                        </li>
-
-                        <li>
-                            Basic checkout fixes
-                        </li>
-
-                    </ul>
-
-
-                    <div class="card-bottom">
-
-                        <div>
-
-                            <span class="price-label">
-                                Starting from
-                            </span>
-
-                            <div class="price">
-                                ₹999+
-                            </div>
-
-                        </div>
-
-
-                        <div class="card-buttons">
-
-                            <a
-                                href="service.html?service=woocommerce"
-                                class="view-button"
-                            >
-                                View Service
-                            </a>
-
-                            <button
-                                type="button"
-                                class="book-button"
-                                data-service="WooCommerce Setup / Fix"
-                                data-price="₹999+"
-                            >
-                                Book Now
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 6. CUSTOM WEBSITE
-                 ================================================= -->
-
-            <article
-                class="service-card"
-                data-category="website design"
-            >
-
-                <a
-                    href="service.html?service=custom-website"
-                    class="service-image"
-                >
-
-                    <div class="image-placeholder">
-                        ✎
-                    </div>
-
-                </a>
-
-
-                <div class="card-content">
-
-                    <div class="service-category">
-                        Custom Website
-                    </div>
-
-                    <h2 class="service-title">
-                        Custom Website Work
-                    </h2>
-
-                    <p class="service-text">
-                        Custom website work based on the exact
-                        requirements of your project.
-                    </p>
-
-
-                    <ul class="features">
-
-                        <li>
-                            Custom UI
-                        </li>
-
-                        <li>
-                            Responsive implementation
-                        </li>
-
-                        <li>
-                            Requirement-based pricing
-                        </li>
-
-                    </ul>
-
-
-                    <div class="card-bottom">
-
-                        <div>
-
-                            <span class="price-label">
-                                Starting from
-                            </span>
-
-                            <div class="price">
-                                ₹1,500+
-                            </div>
-
-                        </div>
-
-
-                        <div class="card-buttons">
-
-                            <a
-                                href="service.html?service=custom-website"
-                                class="view-button"
-                            >
-                                View Service
-                            </a>
-
-                            <button
-                                type="button"
-                                class="book-button"
-                                data-service="Custom Website Work"
-                                data-price="₹1,500+"
-                            >
-                                Book Now
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         ABOUT
-         ========================================================= -->
-
-    <section
-        id="about"
-        style="
-            width:min(1180px,calc(100% - 32px));
-            margin:auto;
-            padding-bottom:60px;
-        "
-    >
-
-        <div
-            style="
-                padding:28px;
-                background:var(--surface);
-                border:1px solid var(--border);
-                border-radius:18px;
-            "
-        >
-
-            <div
-                style="
-                    color:var(--orange-dark);
-                    font-size:11px;
-                    font-weight:900;
-                    margin-bottom:8px;
-                    text-transform:uppercase;
-                    letter-spacing:.7px;
-                "
-            >
-                About
-            </div>
-
-            <h2 style="font-size:26px;margin-bottom:10px;">
-                Hi, I'm Sakshi Madgundi.
-            </h2>
-
-            <p
-                style="
-                    color:var(--muted);
-                    max-width:700px;
-                    line-height:1.7;
-                    font-size:14px;
-                "
-            >
-                I provide practical website, WordPress,
-                WooCommerce and web design services for clients
-                who need a website built, improved or fixed.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
-
-    <footer id="contact">
-
-        <div class="footer-inner">
-
-            <div>
-
-                <div class="footer-name">
-                    Sakshi Madgundi
-                </div>
-
-                <div class="footer-muted">
-                    Web & WordPress Services
-                </div>
-
-            </div>
-
-
-            <div class="footer-muted">
-
-                ©
-                <span id="year"></span>
-                Sakshi Madgundi
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =========================================================
-         QR BOOKING MODAL
-         ========================================================= -->
-
-    <div
-        class="qr-overlay"
-        id="qrOverlay"
-    >
-
-        <div
-            class="qr-modal"
-            role="dialog"
-            aria-modal="true"
-        >
-
-            <button
-                type="button"
-                class="qr-close"
-                id="qrClose"
-            >
-                ×
-            </button>
-
-
-            <h2>
-                Book This Service
-            </h2>
-
-
-            <p class="qr-subtitle">
-                Scan the QR code below to make your payment.
-            </p>
-
-
-            <div
-                class="selected-service"
-                id="selectedService"
-            >
-                Service
-            </div>
-
-
-            <div class="qr-box">
-
-                <img
-                    id="kotakQR"
-                    src="kotak-qr.png"
-                    alt="Kotak payment QR code"
-                >
-
-
-                <div
-                    class="qr-error"
-                    id="qrError"
-                >
-
-                    QR code could not be loaded.
-
-                    <br><br>
-
-                    Make sure the file is exactly:
-
-                    <strong>
-                        kotak-qr.png
-                    </strong>
-
-                    <br>
-
-                    and is in the same folder as
-                    <strong>index.html</strong>.
-
-                </div>
-
-            </div>
-
-
-            <p class="qr-instruction">
-
-                Scan the QR using your UPI app and complete
-                the payment.
-
-            </p>
-
-
-            <div class="payment-note">
-
-                After payment, contact Sakshi with your
-                payment confirmation and service requirements.
-
-            </div>
-
-        </div>
+        © 2026 Sakshi Madgundi. All rights reserved.
 
     </div>
 
+</footer>
 
-    <!-- =========================================================
-         JAVASCRIPT
-         ========================================================= -->
 
-    <script>
-
-        /* YEAR */
-
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-
-
-        /* =====================================================
-           THEME
-           ===================================================== */
-
-        const themeButton =
-            document.getElementById("themeButton");
-
-
-        const savedTheme =
-            localStorage.getItem(
-                "sakshi-theme"
-            );
-
-
-        if (savedTheme === "dark") {
-
-            document.body.classList.add("dark");
-
-            themeButton.textContent = "☾";
-
-        }
-
-
-        themeButton.addEventListener(
-            "click",
-            function () {
-
-                document.body.classList.toggle(
-                    "dark"
-                );
-
-
-                const dark =
-                    document.body.classList.contains(
-                        "dark"
-                    );
-
-
-                localStorage.setItem(
-                    "sakshi-theme",
-                    dark
-                        ? "dark"
-                        : "light"
-                );
-
-
-                themeButton.textContent =
-                    dark
-                        ? "☾"
-                        : "☀";
-
-            }
-        );
-
-
-        /* =====================================================
-           MOBILE MENU
-           ===================================================== */
-
-        const menuButton =
-            document.getElementById(
-                "menuButton"
-            );
-
-
-        const mobileMenu =
-            document.getElementById(
-                "mobileMenu"
-            );
-
-
-        menuButton.addEventListener(
-            "click",
-            function () {
-
-                mobileMenu.classList.toggle(
-                    "open"
-                );
-
-
-                menuButton.textContent =
-                    mobileMenu.classList.contains(
-                        "open"
-                    )
-                        ? "×"
-                        : "☰";
-
-            }
-        );
-
-
-        /* =====================================================
-           QR BOOKING
-           ===================================================== */
-
-        const qrOverlay =
-            document.getElementById(
-                "qrOverlay"
-            );
-
-
-        const qrClose =
-            document.getElementById(
-                "qrClose"
-            );
-
-
-        const selectedService =
-            document.getElementById(
-                "selectedService"
-            );
-
-
-        const qrImage =
-            document.getElementById(
-                "kotakQR"
-            );
-
-
-        const qrError =
-            document.getElementById(
-                "qrError"
-            );
-
-
-        function openQR(
-            service,
-            price
-        ) {
-
-            selectedService.textContent =
-                service +
-                " • " +
-                price;
-
-
-            qrOverlay.classList.add(
-                "open"
-            );
-
-
-            document.body.style.overflow =
-                "hidden";
-
-        }
-
-
-        function closeQR() {
-
-            qrOverlay.classList.remove(
-                "open"
-            );
-
-
-            document.body.style.overflow =
-                "";
-
-        }
-
-
-        document
-            .querySelectorAll(
-                ".book-button"
-            )
-            .forEach(
-                function (button) {
-
-                    button.addEventListener(
-                        "click",
-                        function (event) {
-
-                            /*
-                             IMPORTANT:
-                             Book Now does NOT open
-                             the service page.
-
-                             It ONLY opens the QR.
-                            */
-
-                            event.preventDefault();
-
-                            event.stopPropagation();
-
-
-                            openQR(
-                                button.dataset.service,
-                                button.dataset.price
-                            );
-
-                        }
-                    );
-
-                }
-            );
-
-
-        qrClose.addEventListener(
-            "click",
-            closeQR
-        );
-
-
-        qrOverlay.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    event.target ===
-                    qrOverlay
-                ) {
-
-                    closeQR();
-
-                }
-
-            }
-        );
-
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    closeQR();
-
-                }
-
-            }
-        );
-
-
-        /* =====================================================
-           QR ERROR
-           ===================================================== */
-
-        qrImage.addEventListener(
-            "error",
-            function () {
-
-                qrImage.style.display =
-                    "none";
-
-                qrError.style.display =
-                    "block";
-
-            }
-        );
-
-
-        /* =====================================================
-           CATEGORY FILTER
-           ===================================================== */
-
-        const categories =
-            document.querySelectorAll(
-                ".category"
-            );
-
-
-        const serviceCards =
-            document.querySelectorAll(
-                ".service-card"
-            );
-
-
-        categories.forEach(
-            function (button) {
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        categories.forEach(
-                            function (item) {
-
-                                item.classList.remove(
-                                    "active"
-                                );
-
-                            }
-                        );
-
-
-                        button.classList.add(
-                            "active"
-                        );
-
-
-                        const category =
-                            button.dataset.category;
-
-
-                        serviceCards.forEach(
-                            function (card) {
-
-                                const cardCategories =
-                                    card.dataset.category
-                                        .split(" ");
-
-
-                                if (
-                                    category ===
-                                        "all" ||
-                                    cardCategories.includes(
-                                        category
-                                    )
-                                ) {
-
-                                    card.style.display =
-                                        "flex";
-
-                                } else {
-
-                                    card.style.display =
-                                        "none";
-
-                                }
-
-                            }
-                        );
-
-                    }
-                );
-
-            }
-        );
-
-    </script>
+<script src="script.js"></script>
 
 </body>
 </html>
