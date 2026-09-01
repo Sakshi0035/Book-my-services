@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
@@ -10,1413 +9,308 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Service — Sakshi Madgundi
-    </title>
+    <title>Service | Sakshi Madgundi</title>
 
-
-    <style>
-
-        :root {
-
-            --yellow: #ffd21f;
-            --yellow-soft: #fff5a8;
-
-            --orange: #ff9f1c;
-            --orange-dark: #ef7900;
-
-            --bg: #ffffff;
-            --surface: #ffffff;
-            --surface-soft: #f7f7f7;
-
-            --text: #111111;
-            --muted: #666666;
-
-            --border: #e8e8e8;
-
-        }
-
-
-        body.dark {
-
-            --bg: #080808;
-            --surface: #111111;
-            --surface-soft: #181818;
-
-            --text: #ffffff;
-            --muted: #aaaaaa;
-
-            --border: #292929;
-
-        }
-
-
-        * {
-
-            box-sizing: border-box;
-
-            margin: 0;
-
-            padding: 0;
-
-        }
-
-
-        body {
-
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Arial,
-                sans-serif;
-
-            background:
-                var(--bg);
-
-            color:
-                var(--text);
-
-            transition:
-                .25s ease;
-
-        }
-
-
-        a {
-
-            color:
-                inherit;
-
-            text-decoration:
-                none;
-
-        }
-
-
-        button {
-
-            font: inherit;
-
-            cursor:
-                pointer;
-
-        }
-
-
-        /* =====================================================
-           HEADER
-           ===================================================== */
-
-        header {
-
-            position:
-                sticky;
-
-            top:
-                0;
-
-            z-index:
-                1000;
-
-            height:
-                72px;
-
-            background:
-                var(--surface);
-
-            border-bottom:
-                1px solid
-                var(--border);
-
-        }
-
-
-        .header-inner {
-
-            width:
-                min(
-                    1180px,
-                    calc(
-                        100% - 32px
-                    )
-                );
-
-            height:
-                100%;
-
-            margin:
-                auto;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-        }
-
-
-        .logo {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            gap:
-                10px;
-
-            font-weight:
-                800;
-
-        }
-
-
-        .logo-box {
-
-            width:
-                38px;
-
-            height:
-                38px;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-            background:
-                var(--yellow);
-
-            color:
-                #111;
-
-            border-radius:
-                11px;
-
-            font-weight:
-                900;
-
-        }
-
-
-        .logo span:last-child span {
-
-            color:
-                var(--orange-dark);
-
-        }
-
-
-        .back {
-
-            padding:
-                10px 15px;
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                10px;
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
-
-            font-weight:
-                700;
-
-        }
-
-
-        .back:hover {
-
-            background:
-                var(--yellow);
-
-            color:
-                #111;
-
-            border-color:
-                var(--yellow);
-
-        }
-
-
-        /* =====================================================
-           SERVICE PAGE
-           ===================================================== */
-
-        main {
-
-            width:
-                min(
-                    1050px,
-                    calc(
-                        100% - 32px
-                    )
-                );
-
-            margin:
-                auto;
-
-            padding:
-                55px 0 80px;
-
-        }
-
-
-        .breadcrumb {
-
-            margin-bottom:
-                25px;
-
-            color:
-                var(--muted);
-
-            font-size:
-                12px;
-
-        }
-
-
-        .product {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap:
-                45px;
-
-            align-items:
-                start;
-
-        }
-
-
-        /* IMAGE */
-
-        .product-image {
-
-            min-height:
-                450px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--yellow),
-                    var(--orange)
-                );
-
-            border-radius:
-                22px;
-
-            overflow:
-                hidden;
-
-        }
-
-
-        .product-image-inner {
-
-            font-size:
-                60px;
-
-            font-weight:
-                900;
-
-            color:
-                #111;
-
-        }
-
-
-        /* CONTENT */
-
-        .product-category {
-
-            color:
-                var(--orange-dark);
-
-            font-size:
-                11px;
-
-            font-weight:
-                900;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                .8px;
-
-            margin-bottom:
-                10px;
-
-        }
-
-
-        .product-title {
-
-            font-size:
-                clamp(
-                    32px,
-                    5vw,
-                    48px
-                );
-
-            line-height:
-                1.05;
-
-            letter-spacing:
-                -1.5px;
-
-            margin-bottom:
-                15px;
-
-        }
-
-
-        .product-description {
-
-            color:
-                var(--muted);
-
-            font-size:
-                15px;
-
-            line-height:
-                1.7;
-
-            margin-bottom:
-                22px;
-
-        }
-
-
-        .product-price-label {
-
-            color:
-                var(--muted);
-
-            font-size:
-                11px;
-
-        }
-
-
-        .product-price {
-
-            font-size:
-                27px;
-
-            font-weight:
-                900;
-
-            margin:
-                3px 0 22px;
-
-        }
-
-
-        .included {
-
-            padding:
-                20px;
-
-            background:
-                var(--surface-soft);
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                15px;
-
-            margin-bottom:
-                22px;
-
-        }
-
-
-        .included h3 {
-
-            font-size:
-                15px;
-
-            margin-bottom:
-                12px;
-
-        }
-
-
-        .included ul {
-
-            list-style:
-                none;
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            gap:
-                9px;
-
-        }
-
-
-        .included li {
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
-
-        }
-
-
-        .included li::before {
-
-            content:
-                "✓";
-
-            color:
-                var(--orange-dark);
-
-            font-weight:
-                900;
-
-            margin-right:
-                8px;
-
-        }
-
-
-        .book-large {
-
-            width:
-                100%;
-
-            padding:
-                15px 20px;
-
-            background:
-                var(--yellow);
-
-            color:
-                #111;
-
-            border:
-                0;
-
-            border-radius:
-                12px;
-
-            font-size:
-                14px;
-
-            font-weight:
-                900;
-
-        }
-
-
-        .book-large:hover {
-
-            background:
-                var(--orange);
-
-        }
-
-
-        /* =====================================================
-           QR
-           ===================================================== */
-
-        .qr-overlay {
-
-            position:
-                fixed;
-
-            inset:
-                0;
-
-            z-index:
-                5000;
-
-            display:
-                none;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            padding:
-                20px;
-
-            background:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .72
-                );
-
-            backdrop-filter:
-                blur(5px);
-
-        }
-
-
-        .qr-overlay.open {
-
-            display:
-                flex;
-
-        }
-
-
-        .qr-modal {
-
-            width:
-                min(
-                    420px,
-                    100%
-                );
-
-            padding:
-                22px;
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                22px;
-
-            text-align:
-                center;
-
-        }
-
-
-        .qr-close {
-
-            width:
-                36px;
-
-            height:
-                36px;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-            margin-left:
-                auto;
-
-            margin-bottom:
-                5px;
-
-            border:
-                0;
-
-            border-radius:
-                50%;
-
-            background:
-                var(--surface-soft);
-
-            color:
-                var(--text);
-
-            font-size:
-                20px;
-
-        }
-
-
-        .qr-modal h2 {
-
-            font-size:
-                23px;
-
-            margin-bottom:
-                7px;
-
-        }
-
-
-        .qr-subtitle {
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
-
-            margin-bottom:
-                15px;
-
-        }
-
-
-        .qr-box {
-
-            width:
-                270px;
-
-            height:
-                270px;
-
-            max-width:
-                76vw;
-
-            max-height:
-                76vw;
-
-            margin:
-                auto auto 16px;
-
-            padding:
-                5px;
-
-            background:
-                #fff;
-
-            border:
-                4px solid
-                var(--yellow);
-
-            border-radius:
-                15px;
-
-        }
-
-
-        .qr-box img {
-
-            width:
-                100%;
-
-            height:
-                100%;
-
-            object-fit:
-                contain;
-
-        }
-
-
-        .qr-note {
-
-            padding:
-                11px;
-
-            background:
-                var(--surface-soft);
-
-            border-radius:
-                10px;
-
-            color:
-                var(--muted);
-
-            font-size:
-                11px;
-
-            line-height:
-                1.5;
-
-        }
-
-
-        /* =====================================================
-           MOBILE
-           ===================================================== */
-
-        @media (max-width: 750px) {
-
-            header {
-                height: 64px;
-            }
-
-            .header-inner {
-
-                width:
-                    calc(
-                        100% - 22px
-                    );
-
-            }
-
-            main {
-
-                width:
-                    calc(
-                        100% - 22px
-                    );
-
-                padding-top:
-                    30px;
-
-            }
-
-            .product {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    25px;
-
-            }
-
-            .product-image {
-
-                min-height:
-                    280px;
-
-            }
-
-            .product-title {
-
-                font-size:
-                    34px;
-
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
-
 
 <body>
 
 
-    <!-- HEADER -->
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-    <header>
+<header class="site-header">
 
-        <div class="header-inner">
+    <div class="header-inner">
 
-            <a
-                href="index.html"
-                class="logo"
+        <a href="index.html" class="brand">
+
+            <img
+                src="logo.png"
+                alt="Web Services Since 2026"
+                class="brand-logo"
             >
 
-                <span class="logo-box">
-                    S
-                </span>
+        </a>
 
-                <span>
-                    Sakshi
-                    <span>Madgundi</span>
-                </span>
 
+        <nav class="desktop-nav">
+
+            <a href="index.html" class="nav-link">
+                Services
             </a>
 
-
-            <a
-                href="index.html"
-                class="back"
-            >
-                ← All Services
+            <a href="index.html#about" class="nav-link">
+                About
             </a>
 
-        </div>
+            <a href="index.html#contact" class="nav-link">
+                Contact
+            </a>
 
-    </header>
-
-
-    <!-- SERVICE PRODUCT -->
-
-    <main>
-
-        <div class="breadcrumb">
-
-            Services
-            /
-            <span id="breadcrumbName">
-                Service
-            </span>
-
-        </div>
+        </nav>
 
 
-        <section class="product">
-
-
-            <!-- PRODUCT IMAGE -->
-
-            <div class="product-image">
-
-                <div
-                    class="product-image-inner"
-                    id="productIcon"
-                >
-                    WEB
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT INFORMATION -->
-
-            <div>
-
-                <div
-                    class="product-category"
-                    id="productCategory"
-                >
-                    WEB SERVICE
-                </div>
-
-
-                <h1
-                    class="product-title"
-                    id="productTitle"
-                >
-                    Service
-                </h1>
-
-
-                <p
-                    class="product-description"
-                    id="productDescription"
-                >
-                    Service description.
-                </p>
-
-
-                <span class="product-price-label">
-                    Service price
-                </span>
-
-
-                <div
-                    class="product-price"
-                    id="productPrice"
-                >
-                    ₹0
-                </div>
-
-
-                <div class="included">
-
-                    <h3>
-                        What's included
-                    </h3>
-
-
-                    <ul id="productFeatures">
-
-                    </ul>
-
-                </div>
-
-
-                <!-- BOOK -->
-
-                <button
-                    type="button"
-                    class="book-large"
-                    id="bookButton"
-                >
-                    Book This Service
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         QR MODAL
-         ========================================================= -->
-
-    <div
-        class="qr-overlay"
-        id="qrOverlay"
-    >
-
-        <div class="qr-modal">
+        <div class="header-actions">
 
             <button
-                type="button"
-                class="qr-close"
-                id="qrClose"
+                class="theme-button"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
             >
-                ×
+                ☼
             </button>
 
-
-            <h2>
-                Book This Service
-            </h2>
-
-
-            <p class="qr-subtitle">
-                Scan the QR code below to make the payment.
-            </p>
-
-
-            <div
-                class="qr-box"
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open menu"
             >
-
-                <img
-                    src="kotak-qr.png"
-                    alt="Kotak payment QR code"
-                >
-
-            </div>
-
-
-            <div class="qr-note">
-
-                After payment, contact Sakshi Madgundi
-                with your payment confirmation and
-                service requirements.
-
-            </div>
+                ☰
+            </button>
 
         </div>
 
     </div>
 
 
-    <script>
+    <div class="mobile-menu" id="mobileMenu">
 
-        /* =====================================================
-           SERVICE DATABASE
-           ===================================================== */
+        <a href="index.html">
+            Services
+        </a>
 
-        const services = {
+        <a href="index.html#about">
+            About
+        </a>
 
-            "wordpress-fix": {
+        <a href="index.html#contact">
+            Contact
+        </a>
 
-                name:
-                    "WordPress Issue Fix",
+    </div>
 
-                category:
-                    "WordPress",
+</header>
 
-                price:
-                    "₹199 – ₹599",
 
-                icon:
-                    "WP",
 
-                description:
-                    "Fix a specific WordPress or WooCommerce issue on your existing website.",
+<!-- =========================================================
+     SERVICE PRODUCT PAGE
+========================================================= -->
 
-                features: [
+<main>
 
-                    "One specific website issue",
+<section class="single-service">
 
-                    "Theme or plugin related issues",
+    <div class="single-service-image">
 
-                    "Basic troubleshooting",
+        <div
+            class="large-service-icon"
+            id="serviceIcon"
+        >
+            ✦
+        </div>
 
-                    "Responsive checking where required"
+    </div>
 
-                ]
 
-            },
+    <div class="single-service-info">
 
+        <p
+            class="service-category"
+            id="serviceCategory"
+        >
+            WEB SERVICE
+        </p>
 
-            "header-menu": {
 
-                name:
-                    "Header / Menu Fix",
+        <h1 id="serviceTitle">
+            Service
+        </h1>
 
-                category:
-                    "WordPress",
 
-                price:
-                    "₹199 – ₹599",
+        <p
+            class="single-service-description"
+            id="serviceDescription"
+        >
+            Loading service...
+        </p>
 
-                icon:
-                    "☰",
 
-                description:
-                    "Fix navigation, headers, mobile menus, spacing and responsive layout problems.",
+        <div class="price-box">
 
-                features: [
+            <span>
+                Starting / estimated price
+            </span>
 
-                    "Desktop navigation fixes",
+            <strong id="servicePrice">
+                ₹0
+            </strong>
 
-                    "Mobile menu fixes",
+        </div>
 
-                    "Header spacing adjustments",
 
-                    "Responsive layout corrections"
+        <div class="included-box">
 
-                ]
+            <h2>
+                What's included
+            </h2>
 
-            },
+            <ul id="serviceFeatures"></ul>
 
+        </div>
 
-            "design-to-website": {
 
-                name:
-                    "Design → Website",
+        <!-- DIRECT BOOK BUTTON -->
 
-                category:
-                    "Web Design",
+        <button
+            type="button"
+            class="book-button"
+            id="bookButton"
+        >
+            Book This Service
+        </button>
 
-                price:
-                    "₹1,500 – ₹3,000",
 
-                icon:
-                    "✦",
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← Back to Services
+        </a>
 
-                description:
-                    "Turn an existing design into a responsive working website.",
+    </div>
 
-                features: [
+</section>
 
-                    "HTML / CSS implementation",
+</main>
 
-                    "Responsive design",
 
-                    "Design matching",
 
-                    "Basic JavaScript functionality"
+<!-- =========================================================
+     PAYMENT / QR OVERLAY
+========================================================= -->
 
-                ]
+<div
+    class="payment-overlay"
+    id="paymentOverlay"
+    aria-hidden="true"
+>
 
-            },
+    <div class="payment-box">
 
+        <button
+            class="close-payment"
+            id="closePayment"
+            aria-label="Close payment"
+        >
+            ×
+        </button>
 
-            "complete-website": {
 
-                name:
-                    "Complete Website",
+        <p class="section-label">
+            BOOK THIS SERVICE
+        </p>
 
-                category:
-                    "Website",
 
-                price:
-                    "₹6,666 – ₹9,999",
+        <h2 id="paymentServiceName">
+            Service
+        </h2>
 
-                icon:
-                    "WEB",
 
-                description:
-                    "A complete basic website built according to the client's requirements.",
+        <p class="payment-instruction">
 
-                features: [
+            Scan the QR code below to make the payment.
+            After payment, contact Sakshi with your payment
+            screenshot and service details.
 
-                    "Website pages and sections",
+        </p>
 
-                    "Responsive desktop and mobile design",
 
-                    "Basic website functionality",
+        <div class="qr-container">
 
-                    "Deployment-ready files"
+            <img
+                src="kotak-qr.png"
+                alt="Kotak payment QR code"
+                class="qr-image"
+                id="qrImage"
+            >
 
-                ]
+        </div>
 
-            },
 
+        <p class="payment-note">
+            Payment is made directly through the displayed
+            Kotak QR code.
+        </p>
 
-            "woocommerce": {
 
-                name:
-                    "WooCommerce Setup / Fix",
+        <a
+            href="mailto:your-email@example.com"
+            class="primary-button payment-contact"
+        >
+            I've Paid — Contact Sakshi
+        </a>
 
-                category:
-                    "WooCommerce",
+    </div>
 
-                price:
-                    "₹999+",
+</div>
 
-                icon:
-                    "🛒",
 
-                description:
-                    "WooCommerce product, cart, checkout and basic store functionality setup or fixes.",
 
-                features: [
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-                    "Product setup",
+<footer class="site-footer">
 
-                    "Cart functionality",
+    <div class="footer-inner">
 
-                    "Basic checkout fixes",
+        <div>
 
-                    "WooCommerce configuration"
+            <strong>
+                Sakshi Madgundi
+            </strong>
 
-                ]
+            <p>
+                Web Services · Since 2026
+            </p>
 
-            },
+        </div>
 
 
-            "custom-website": {
+        <div class="footer-links">
 
-                name:
-                    "Custom Website Work",
+            <a href="index.html">
+                Services
+            </a>
 
-                category:
-                    "Custom Website",
+            <a href="index.html#about">
+                About
+            </a>
 
-                price:
-                    "₹1,500+",
+            <a href="index.html#contact">
+                Contact
+            </a>
 
-                icon:
-                    "✎",
+        </div>
 
-                description:
-                    "Custom website work based on the exact requirements of your project.",
+    </div>
 
-                features: [
 
-                    "Custom UI implementation",
+    <div class="footer-bottom">
 
-                    "Responsive website",
+        © 2026 Sakshi Madgundi. All rights reserved.
 
-                    "Requirement-based development",
+    </div>
 
-                    "Custom functionality where applicable"
+</footer>
 
-                ]
 
-            }
-
-        };
-
-
-        /* =====================================================
-           GET SERVICE FROM URL
-           ===================================================== */
-
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
-
-
-        const serviceKey =
-            params.get("service");
-
-
-        const service =
-            services[serviceKey];
-
-
-        /* =====================================================
-           LOAD SERVICE
-           ===================================================== */
-
-        if (service) {
-
-            document.title =
-                service.name +
-                " — Sakshi Madgundi";
-
-
-            document.getElementById(
-                "breadcrumbName"
-            ).textContent =
-                service.name;
-
-
-            document.getElementById(
-                "productCategory"
-            ).textContent =
-                service.category;
-
-
-            document.getElementById(
-                "productTitle"
-            ).textContent =
-                service.name;
-
-
-            document.getElementById(
-                "productDescription"
-            ).textContent =
-                service.description;
-
-
-            document.getElementById(
-                "productPrice"
-            ).textContent =
-                service.price;
-
-
-            document.getElementById(
-                "productIcon"
-            ).textContent =
-                service.icon;
-
-
-            const featureList =
-                document.getElementById(
-                    "productFeatures"
-                );
-
-
-            featureList.innerHTML = "";
-
-
-            service.features.forEach(
-                function (feature) {
-
-                    const li =
-                        document.createElement(
-                            "li"
-                        );
-
-                    li.textContent =
-                        feature;
-
-                    featureList.appendChild(
-                        li
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =====================================================
-           BOOKING
-           ===================================================== */
-
-        const qrOverlay =
-            document.getElementById(
-                "qrOverlay"
-            );
-
-
-        const bookButton =
-            document.getElementById(
-                "bookButton"
-            );
-
-
-        const qrClose =
-            document.getElementById(
-                "qrClose"
-            );
-
-
-        bookButton.addEventListener(
-            "click",
-            function () {
-
-                qrOverlay.classList.add(
-                    "open"
-                );
-
-                document.body.style.overflow =
-                    "hidden";
-
-            }
-        );
-
-
-        qrClose.addEventListener(
-            "click",
-            function () {
-
-                qrOverlay.classList.remove(
-                    "open"
-                );
-
-                document.body.style.overflow =
-                    "";
-
-            }
-        );
-
-
-        qrOverlay.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    event.target ===
-                    qrOverlay
-                ) {
-
-                    qrOverlay.classList.remove(
-                        "open"
-                    );
-
-                    document.body.style.overflow =
-                        "";
-
-                }
-
-            }
-        );
-
-
-        /* =====================================================
-           THEME
-           ===================================================== */
-
-        const savedTheme =
-            localStorage.getItem(
-                "sakshi-theme"
-            );
-
-
-        if (
-            savedTheme ===
-            "dark"
-        ) {
-
-            document.body.classList.add(
-                "dark"
-            );
-
-        }
-
-    </script>
+<script src="script.js"></script>
 
 </body>
-
 </html>
