@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -11,9 +12,15 @@
 
     <title>Service | Sakshi Madgundi</title>
 
+    <meta
+        name="description"
+        content="View and book web services by Sakshi Madgundi."
+    >
+
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 
 <body>
 
@@ -26,37 +33,56 @@
 
     <div class="header-inner">
 
-        <a href="index.html" class="brand">
+
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="Sakshi Madgundi Web Services"
+        >
 
             <img
                 src="logo.png"
-                alt="Web Services Since 2026"
+                alt="Sakshi Madgundi Web Services"
                 class="brand-logo"
             >
 
         </a>
 
 
+
         <nav class="desktop-nav">
 
-            <a href="index.html" class="nav-link">
+            <a
+                href="index.html"
+                class="nav-link active"
+            >
                 Services
             </a>
 
-            <a href="index.html#about" class="nav-link">
+
+            <a
+                href="index.html#about"
+                class="nav-link"
+            >
                 About
             </a>
 
-            <a href="index.html#contact" class="nav-link">
+
+            <a
+                href="index.html#contact"
+                class="nav-link"
+            >
                 Contact
             </a>
 
         </nav>
 
 
+
         <div class="header-actions">
 
             <button
+                type="button"
                 class="theme-button"
                 id="themeToggle"
                 aria-label="Toggle dark mode"
@@ -64,7 +90,9 @@
                 ☼
             </button>
 
+
             <button
+                type="button"
                 class="mobile-menu-button"
                 id="mobileMenuButton"
                 aria-label="Open menu"
@@ -77,15 +105,23 @@
     </div>
 
 
-    <div class="mobile-menu" id="mobileMenu">
+
+    <!-- MOBILE MENU -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
 
         <a href="index.html">
             Services
         </a>
 
+
         <a href="index.html#about">
             About
         </a>
+
 
         <a href="index.html#contact">
             Contact
@@ -98,12 +134,15 @@
 
 
 <!-- =========================================================
-     SERVICE PRODUCT PAGE
+     SERVICE DETAIL
 ========================================================= -->
 
 <main>
 
 <section class="single-service">
+
+
+    <!-- IMAGE / VISUAL -->
 
     <div class="single-service-image">
 
@@ -117,7 +156,11 @@
     </div>
 
 
+
+    <!-- SERVICE INFORMATION -->
+
     <div class="single-service-info">
+
 
         <p
             class="service-category"
@@ -127,9 +170,11 @@
         </p>
 
 
+
         <h1 id="serviceTitle">
             Service
         </h1>
+
 
 
         <p
@@ -140,11 +185,15 @@
         </p>
 
 
+
+        <!-- EXACT SINGLE PRICE -->
+
         <div class="price-box">
 
             <span>
-                Starting / estimated price
+                Service price
             </span>
+
 
             <strong id="servicePrice">
                 ₹0
@@ -153,18 +202,23 @@
         </div>
 
 
+
+        <!-- FEATURES -->
+
         <div class="included-box">
 
             <h2>
                 What's included
             </h2>
 
+
             <ul id="serviceFeatures"></ul>
 
         </div>
 
 
-        <!-- DIRECT BOOK BUTTON -->
+
+        <!-- BOOK -->
 
         <button
             type="button"
@@ -175,12 +229,14 @@
         </button>
 
 
+
         <a
             href="index.html"
             class="back-link"
         >
             ← Back to Services
         </a>
+
 
     </div>
 
@@ -191,7 +247,7 @@
 
 
 <!-- =========================================================
-     PAYMENT / QR OVERLAY
+     PAYMENT OVERLAY
 ========================================================= -->
 
 <div
@@ -202,7 +258,9 @@
 
     <div class="payment-box">
 
+
         <button
+            type="button"
             class="close-payment"
             id="closePayment"
             aria-label="Close payment"
@@ -211,9 +269,11 @@
         </button>
 
 
+
         <p class="section-label">
             BOOK THIS SERVICE
         </p>
+
 
 
         <h2 id="paymentServiceName">
@@ -221,13 +281,24 @@
         </h2>
 
 
+
+        <p
+            class="payment-price"
+            id="paymentPrice"
+        >
+            ₹0
+        </p>
+
+
+
         <p class="payment-instruction">
 
-            Scan the QR code below to make the payment.
-            After payment, contact Sakshi with your payment
-            screenshot and service details.
+            Scan the QR code below to make your payment.
+            After payment, contact Sakshi and send your
+            payment screenshot along with your requirements.
 
         </p>
+
 
 
         <div class="qr-container">
@@ -236,16 +307,41 @@
                 src="kotak-qr.png"
                 alt="Kotak payment QR code"
                 class="qr-image"
-                id="qrImage"
+
             >
 
         </div>
 
 
+
         <p class="payment-note">
-            Payment is made directly through the displayed
-            Kotak QR code.
+
+            After payment, contact Sakshi using the phone
+            number or email below.
+
         </p>
+
+
+
+        <div class="payment-contact-details">
+
+
+            <a href="tel:+919960021658">
+
+                📞 +91 9960021658
+
+            </a>
+
+
+            <a href="mailto:sakshimadgundi2020@gmail.com">
+
+                ✉ sakshimadgundi2020@gmail.com
+
+            </a>
+
+
+        </div>
+
 
 
         <a
@@ -254,6 +350,7 @@
         >
             I've Paid — Contact Sakshi
         </a>
+
 
     </div>
 
@@ -267,19 +364,33 @@
 
 <footer class="site-footer">
 
+
     <div class="footer-inner">
 
-        <div>
+
+        <div class="footer-brand">
 
             <strong>
                 Sakshi Madgundi
             </strong>
 
+
             <p>
                 Web Services · Since 2026
             </p>
 
+
+            <p>
+                +91 9960021658
+            </p>
+
+
+            <p>
+                sakshimadgundi2020@gmail.com
+            </p>
+
         </div>
+
 
 
         <div class="footer-links">
@@ -288,17 +399,26 @@
                 Services
             </a>
 
+
             <a href="index.html#about">
                 About
             </a>
+
 
             <a href="index.html#contact">
                 Contact
             </a>
 
+
+            <a href="mailto:sakshimadgundi2020@gmail.com">
+                Email Me
+            </a>
+
         </div>
 
+
     </div>
+
 
 
     <div class="footer-bottom">
@@ -307,10 +427,13 @@
 
     </div>
 
+
 </footer>
+
 
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
